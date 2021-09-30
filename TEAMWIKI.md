@@ -13,13 +13,13 @@ Madison May (Product Owner)
 
 ## Programming Languages and Technologies Used:
 
-	-Java 
-	-JUnit Testing Framework
-	-Gradle
-	-IntelliJ IDE
-	-JavaFX
-	-Docker
-	-Discord
+Java 
+JUnit Testing Framework
+Gradle
+IntelliJ IDE
+JavaFX
+Docker
+Discord
 
 ## Method for Documenting Project Requirements
 	

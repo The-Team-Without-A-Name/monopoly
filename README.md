@@ -3,20 +3,27 @@
 This is a multiplayer Monopoly game that runs on a remote server while players connect via the client desktop application on their machines.
 This will fulfill the project requirements for the CS3321 Course Project
 
-Installation: Coming Soon
+## Installation
+ Coming Soon
 
-Usage: Coming Soon
+## Usage 
+Coming Soon
 
-Credits:
+# Credits
+
+CS 3321 Team 3, The Team Without a Name, consisting of:
 
 Pawan Acharya
+
 Rowan Murphy
-Fernando 
+
+Fernando Diaz
+
 Madison May
 
 
 License:
-[200~MIT License
+MIT License
 
 Copyright (c) 2021 The-Team-Without-A-Name
 

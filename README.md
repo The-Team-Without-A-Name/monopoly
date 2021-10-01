@@ -39,9 +39,6 @@ Saving the state of the game in a data store, with the option of loading a prior
 
 The basic datastore is simply a named json file. (But this may be replaced, as a feature enhancement, with a database using an ORM)
 
-Additional Rules (mortgaging property, selling property, selling buildings, trading, etc.) are considered advanced and do not require implementation in the MVP
-These can be features to implement to achieve the requirements for a B or an A
-
 # Credits
 
 CS 3321 Team 3, The Team Without a Name, consisting of:

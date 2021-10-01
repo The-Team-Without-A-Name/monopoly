@@ -29,7 +29,7 @@ The basic rules of gameplay which include the following
 
 -Knowledge of board state including player locations
 
--Sending game state data to client (including any details such as the player went to Jail, they can roll again, they passed go, etc.)
+-Sending game state data to client 
 
 -Receiving information from clients such as desire to buy property, paying rent, etc.
 

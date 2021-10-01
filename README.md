@@ -17,6 +17,8 @@ The MVP for this project must consist of at least the following:
 
 -A microservice providing the game engine
 
+
+
 The basic rules of gameplay which include the following
 
 -Setup of a new game between 2 or more connected clients

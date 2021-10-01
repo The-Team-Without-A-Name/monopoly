@@ -11,33 +11,33 @@ Coming Soon
 ## MVP
 The MVP for this project must consist of at least the following:
 
-A Graphical User Interface which  depicts all players, the board, and any animations showing what occurs during game play.
+-A Graphical User Interface which  depicts all players, the board, and any animations showing what occurs during game play.
 
-A Client which houses the UI and which connects to a game server, this client must be implemented as a desktop client. It may not be a separate web interface
+-A Client which houses the UI and which connects to a game server, this client must be implemented as a desktop client. It may not be a separate web interface
 
-A microservice providing the game engine
+-A microservice providing the game engine
 
 The basic rules of gameplay which include the following
 
-Setup of a new game between 2 or more connected clients
+-Setup of a new game between 2 or more connected clients
 
-Management of the bank (including houses, hotels, money, chance and community chest cards)
+-Management of the bank (including houses, hotels, money, chance and community chest cards)
 
-Management of Gameplay
+-Management of Gameplay
 
-Roll of the dice
+-Roll of the dice
 
-Knowledge of board state including player locations
+-Knowledge of board state including player locations
 
-Sending game state data to client (including any details such as the player went to Jail, they can roll again, they passed go, etc.)
+-Sending game state data to client (including any details such as the player went to Jail, they can roll again, they passed go, etc.)
 
-Receiving information from clients such as desire to buy property, paying rent, etc.
+-Receiving information from clients such as desire to buy property, paying rent, etc.
 
-Bankruptcy and Handling of End of Game
+-Bankruptcy and Handling of End of Game
 
-Saving the state of the game in a data store, with the option of loading a prior game.
+-Saving the state of the game in a data store, with the option of loading a prior game.
 
-The basic datastore is simply a named json file. (But this may be replaced, as a feature enhancement, with a database using an ORM)
+-The basic datastore is simply a named json file. (But this may be replaced, as a feature enhancement, with a database using an ORM)
 
 # Credits
 

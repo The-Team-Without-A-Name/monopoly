@@ -3,6 +3,27 @@
 This is a multiplayer Monopoly game that runs on a remote server while players connect via the client desktop application on their machines.
 This will fulfill the project requirements for the CS3321 Course Project
 
+## Team Constitution
+As we have four team members in our team, we will be working together throughout the semester to develop a Monopoly game. The main focus will be to divide the work and accomplish the goal together. To maintain a strong bond between the team members, we will try to understand each other's weaknesses and help each other when needed. Similarly, we will make sure that everyone is at the same pace. 
+
+In case of conflicts, we will try to solve it by group discussion and votes of majority. If there has been a misunderstanding, we will need to make sure others are aware.
+
+### Team meetings:
+ 2 times a week
+In person: Right after class on Monday, Business Building
+Online: Thursday at 6:30 pm, on Discord
+Main method of communication: Discord, Gmail
+To ensure everyone attends the meeting, we will remind each other in Discord.
+If anyone is not attending the meeting, other team members should be notified.
+In case someone misses the meeting, we will try to keep them updated through chat.
+
+### Team Roles: 
+Team roles will be different in each sprint. According to class rules, in each Sprint, there will be a new product owner and scrum master. However, everyone is responsible for the project.
+
+### Assigning tasks: 
+With group agreement or discussion.
+
+
 ## Installation
  Coming Soon
 

@@ -13,18 +13,30 @@ Madison May (Product Owner)
 
 ## Programming Languages and Technologies Used:
 
-Java 
+Java
+ 
 JUnit Testing Framework
+
 Gradle
+
 IntelliJ IDE
+
 JavaFX
+
 Docker
+
 Discord
+
+
 
 ## Method for Documenting Project Requirements
 	
 This is subject to change. 
 We will keep our project requirements in a file in this repo, which will be referenced and updated with the CHANGELOG. Additionaly, unofficial questions and concerns regarding requirements will be discussed on the team Discord channel. 
+
+## Style Guide
+
+We will be using the Google Style Guide for Java
 
 ## Project Description
 

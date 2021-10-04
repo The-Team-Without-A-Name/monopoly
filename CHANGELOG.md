@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Added
 	-This CHANGELOG file which we will use to keep track of the work we do for releases.
 	-README file now updated to have license, description, and team members
-
+	-TEAMWIKI file for project for project practices
 
 
 

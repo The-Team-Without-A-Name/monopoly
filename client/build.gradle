@@ -1,5 +1,9 @@
 plugins {
     id 'java'
+    //application plugin
+    id 'application'
+    //plugin for JavaFX
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group 'org.example'
@@ -9,11 +13,28 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
+    //JUnit Jupiter testing
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.8'
 }
 
 test {
     useJUnitPlatform()
+}
+
+javafx {
+    version = "16"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+//tell Gradle what to run
+application {
+    mainClass = 'Client.MonopolyClient'
+    applicationName = 'client-monopoly'
 }

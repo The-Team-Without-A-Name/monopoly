@@ -27,19 +27,31 @@ dependencies {
 
     //GSON
     implementation 'com.google.code.gson:gson:2.8.8'
+
+
+    testImplementation 'com.konghq:unirest-java:3.13.0'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
 }
 
 test {
     useJUnitPlatform()
 }
 
+configurations {
+    testCompile
+}
 javafx {
     version = "16"
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
+
 //tell Gradle what to run
 application {
     mainClass = 'Client.MonopolyClient'
     applicationName = 'client-monopoly'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.example'
@@ -19,4 +20,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+//Application needed to run a project -- Madison
+
+application {
+    applicationName = 'server-monopoly'
+    mainClass = 'Server.ServerInit'
 }

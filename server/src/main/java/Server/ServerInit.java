@@ -13,6 +13,6 @@ public class ServerInit {
                 config.server(() ->
                         new Server(queuedThreadPool))).start(7000);
 
-        app.get("/", ctx -> ctx.result("Hello World"));
+        app.get("/", ctx -> ctx.result("Server Launch Successful"));
     }
 }

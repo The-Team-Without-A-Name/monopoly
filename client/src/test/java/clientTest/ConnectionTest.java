@@ -21,7 +21,14 @@ public class ConnectionTest {
     }
 
     @Test
+    private static void isInitializeTest() {
+        Assertions.assertTrue(connection.isInitialize());
+    }
+
+    @Test
     private static void testTest() {
         assertEquals(1, 1);
     }
 }
+
+//unirest!!!

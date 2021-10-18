@@ -21,11 +21,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This will be the work we do from the first sprint.
 ### Added
-	-instert new feature descriptions here
+	-server and Client java files added
+    -Module info added
+    -GUI for entering address and port made
 
 
-### Changeed
-	-put descriptions of feature descriptions here
 
+### Changed
+    -Server initialied and runs
+    -client initialized and runs
+    -GUI created and works
 ### Removed
 	-list what you remove here

@@ -64,12 +64,12 @@ public class MonopolyClient extends Application {
         String str_ad=address.toString();
         String str_port=address.toString();
 
-        Connection connection=new Connection();
-        connection.initialize(str_ad,str_port);
+        //Connection connection=new Connection();
+        //connection.initialize(str_ad,str_port);
 
-        if (connection.isInitialize()){
-            System.out.println("Successful in connecting to the server");
-        }
+       // if (connection.isInitialize()){
+       //     System.out.println("Successful in connecting to the server");
+        //}
     }
 
 }

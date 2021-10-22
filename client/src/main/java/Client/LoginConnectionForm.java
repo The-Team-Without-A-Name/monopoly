@@ -1,3 +1,5 @@
+package Client;
+
 import Client.MonopolyClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,9 +26,9 @@ public class LoginConnectionForm {
 
     //BUTTON ACTION
     protected void handleLoginPress(ActionEvent event){
-        //ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
+        ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
         if(uri.getText().isBlank()){
-            app.showDialog("PORT AND ADDRESS MISSING");
+           app.showDialog("PORT AND ADDRESS MISSING");
             return;
         }
 

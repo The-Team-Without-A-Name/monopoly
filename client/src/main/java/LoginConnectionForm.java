@@ -23,14 +23,14 @@ public class LoginConnectionForm {
 
 
     //BUTTON ACTION
-    protected void handleLoginPress(ActionEvent event){
-        //ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
-        if(uri.getText().isBlank()){
-            app.showDialog("PORT AND ADDRESS MISSING");
-            return;
-        }
+//    protected void handleLoginPress(ActionEvent event){
+//        //ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
+//        if(uri.getText().isBlank()){
+//            app.showDialog("PORT AND ADDRESS MISSING");
+//            return;
+//        }
 
         //CALL connection.init and connection.instance to ensure proper connection.
-    }
+//    }
 
 }

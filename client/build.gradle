@@ -48,7 +48,7 @@ javafx {
 
 //tell Gradle what to run
 application {
-    mainClass = 'Client.MonopolyClient'
+    mainClass = 'GameBoard'
     applicationName = 'client-monopoly'
 }
 

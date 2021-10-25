@@ -31,6 +31,8 @@ dependencies {
 
     testImplementation 'com.konghq:unirest-java:3.13.0'
     testImplementation 'org.assertj:assertj-core:3.21.0'
+
+
 }
 
 test {
@@ -48,7 +50,7 @@ javafx {
 
 //tell Gradle what to run
 application {
-    mainClass = 'GameBoard'
+    mainClass = 'Client.MonopolyClient'
     applicationName = 'client-monopoly'
 }
 

@@ -20,23 +20,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
       //  connection.disconnect();
     //}
 
-<<<<<<< HEAD
-    @Test
-    private static void isInitializeTest() {
-        Assertions.assertTrue(connection.isInitialize());
-    }
-
-    @Test
-    private static void testTest() {
-        assertEquals(1, 1);
-    }
-}
-
-//unirest!!!
-=======
-    //@Test
-    // static void testTest() {
-     //   assertEquals(1, 1);
-   // }
+//<<<<<<< HEAD
+//    @Test
+//    private static void isInitializeTest() {
+//        Assertions.assertTrue(connection.isInitialize());
+//    }
+//
+//    @Test
+//    private static void testTest() {
+//        assertEquals(1, 1);
+//    }
 //}
->>>>>>> 2cbc8a357aa14b7b2c80a2facc7a936b005bebd5
+//
+////unirest!!!
+//=======
+//    //@Test
+//    // static void testTest() {
+//     //   assertEquals(1, 1);
+//   // }
+////}
+//>>>>>>> 2cbc8a357aa14b7b2c80a2facc7a936b005bebd5

@@ -8,6 +8,7 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+modularity.disableEffectiveArgumentsAdjustment() // the fix
 
 repositories {
     mavenCentral()

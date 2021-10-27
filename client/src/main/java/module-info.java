@@ -4,6 +4,7 @@ module Client {
     requires javafx.fxml;
     requires javafx.base;
     exports Client;
+    opens Client to javafx.fxml;
 
 
 }

@@ -14,33 +14,39 @@ public class LoginConnectionForm {
 
     private MonopolyClient app;
 
+    @FXML
+    TextField uri;
+    @FXML
+    Spinner<Integer> port;
 
     public LoginConnectionForm(MonopolyClient app){
         this.app = app;
     }
 
-    //Textfield URI and Spinner For address and Port.
-    //
-    //
 
 
     //BUTTON ACTION
+    @FXML
+  protected void handleLoginPress(ActionEvent event){
+        //ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
+      if (uri.getText().isBlank()) {
+          app.showWarningDialog("Address Missing", "Server address cannot be blank");
+          return;
+      }
 
-//    protected void handleLoginPress(ActionEvent event){
-//        //ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
-//        if(uri.getText().isBlank()){
-//            app.showDialog("PORT AND ADDRESS MISSING");
-//            return;
-//        }
+      Connection connection = Connection.instance();
+      connection.initialize(uri.getText(), port.getValue().toString());
 
-//    protected void handleLoginPress(ActionEvent event){
-//       // ADD IF STATEMENT THAT CHECKS URI AND SPINNER AFTER INITIAL GUI IS REIMPLEMENTED.
-//        if(uri.getText().isBlank()){
-//           app.showDialog("PORT AND ADDRESS MISSING");
-//            return;
-//        }
-//
-//        //CALL connection.init and connection.instance to ensure proper connection.
-//    }
+      if (connection.initialized && connection.test()) {
+          try {
+              app.showBoard();
+          } catch (IOException ex) {
+              //app.showExceptionDialog("Couldn't load game board", ex);
+          }
+      } else {
+          app.showWarningDialog("Error Connecting", "Couldn't connect to the server. Verify that you have the correct address and port.");
+      }
+  }
+
 
 }

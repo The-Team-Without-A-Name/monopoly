@@ -3,6 +3,11 @@ import io.javalin.Javalin;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
+import java.util.List;
+import java.util.Objects;
+
+import static io.javalin.apibuilder.ApiBuilder.get;
+import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class ServerInit {
     public static void main(String[] args) {
@@ -14,5 +19,11 @@ public class ServerInit {
                         new Server(queuedThreadPool))).start(7000);
 
         app.get("/", ctx -> ctx.result("Server Launch Successful"));
+        app.routes(() -> {
+
+            get("/api/status", ctx -> {
+                ctx.result("OK");
+            });
+        });
     }
 }

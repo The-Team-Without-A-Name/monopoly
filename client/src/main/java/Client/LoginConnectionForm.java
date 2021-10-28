@@ -17,7 +17,7 @@ public class LoginConnectionForm {
     @FXML
     TextField uri;
     @FXML
-    Spinner<Integer> port;
+    Spinner <Integer> port;
 
     public LoginConnectionForm(MonopolyClient app){
         this.app = app;
@@ -41,12 +41,13 @@ public class LoginConnectionForm {
           try {
               app.showBoard();
           } catch (IOException ex) {
-              //app.showExceptionDialog("Couldn't load game board", ex);
+              //app.showExceptionDialog("Cant load game board, try restarting the program", ex);
           }
       } else {
-          app.showWarningDialog("Error Connecting", "Couldn't connect to the server. Verify that you have the correct address and port.");
+          app.showWarningDialog("Error Connecting", "Couldn't connect to the server. Make sure that port and address are correct and try again.");
       }
   }
 
 
 }
+//&& connection.test()

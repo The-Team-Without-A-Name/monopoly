@@ -32,6 +32,8 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <Spinner fx:id="port" layoutX="135.0" layoutY="193.0" />
+      <Spinner fx:id="port" editable="true" min="5000" max="7000" initialValue="6999" layoutX="135.0" layoutY="192.0" />
+
+      
    </children>
 </AnchorPane>

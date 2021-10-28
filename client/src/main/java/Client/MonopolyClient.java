@@ -46,7 +46,7 @@ public class MonopolyClient extends Application {
         loader.setController(new LoginConnectionForm(this));
         loader.setLocation(getClass().getResource(CONNECTION_BOX_FXML));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 450, 130);
+        Scene scene = new Scene(root, 400, 325);
         mainStage.setScene(scene);
     }
 

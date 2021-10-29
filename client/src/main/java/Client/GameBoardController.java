@@ -12,6 +12,11 @@ import javafx.scene.shape.Rectangle;
 import java.io.FileNotFoundException;
 
 public class GameBoardController {
+
+    private MonopolyClient app;
+
+
+
     //FXML objects
     @FXML
     private Label dice;
@@ -30,42 +35,46 @@ public class GameBoardController {
 
 
 
+
+    public GameBoardController(MonopolyClient app) { this.app = app;}
     //FXML button methods
     @FXML
     protected void onStartButtonClick() throws FileNotFoundException {
 
         if (!gameBoard.getChildren().contains(piece)) {
-            gameBoard.add(piece, 0, 0);
+            gameBoard.add(piece, 10, 0);
             gameBoard.setHalignment(piece, HPos.CENTER);
             gameBoard.setValignment(piece, VPos.CENTER);
         }
     }
     @FXML
     protected void onMoveButtonClick() {
-        dice.setText("test");
+        //move for some input from server
+        Move(4);
+    }
+
+    protected void Move(int movement) {
         if (gameBoard.getChildren().contains(piece)) {
-            int column = gameBoard.getColumnIndex(piece);
-            int row = gameBoard.getRowIndex(piece);
-
-            if (onTopRow(column, row)) gameBoard.setColumnIndex(piece, column + 1);
-            if (onBottomRow(column, row)) gameBoard.setColumnIndex(piece, column - 1);
-            if (onRightColumn(column, row)) gameBoard.setRowIndex(piece, row + 1);
-            if (onLeftColumn(column, row)) gameBoard.setRowIndex(piece, row - 1);
-            gameBoard.setHalignment(piece, HPos.CENTER);
-            gameBoard.setValignment(piece, VPos.CENTER);
-
-        }
-    }
-
-    @FXML
-    protected void onMove(int movement) {
         for(int i = 0; i < movement; i++) {
+                int column = gameBoard.getColumnIndex(piece);
+                int row = gameBoard.getRowIndex(piece);
 
+                if (onTopRow(column, row)) gameBoard.setColumnIndex(piece, column + 1);
+                if (onBottomRow(column, row)) gameBoard.setColumnIndex(piece, column - 1);
+                if (onRightColumn(column, row)) gameBoard.setRowIndex(piece, row + 1);
+                if (onLeftColumn(column, row)) gameBoard.setRowIndex(piece, row - 1);
+                gameBoard.setHalignment(piece, HPos.CENTER);
+                gameBoard.setValignment(piece, VPos.CENTER);
+
+            }
         }
     }
 
     @FXML
-    protected void onDiceButtonClick() {dice.setText("Dice rolled");}
+    protected void onDiceButtonClick() {
+        //Need to send dice roll request to server
+        dice.setText("Dice rolled");
+    }
 
     //Regular internal methods
 
@@ -80,5 +89,9 @@ public class GameBoardController {
     }
     protected boolean onRightColumn(int column, int row) {
         return column == 10 && row != 10;
+    }
+
+    private void initGameBoard() {
+
     }
 }

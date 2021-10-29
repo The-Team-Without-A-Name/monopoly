@@ -41,7 +41,7 @@ public class LoginConnectionForm {
           try {
               app.showBoard();
           } catch (IOException ex) {
-              //app.showExceptionDialog("Cant load game board, try restarting the program", ex);
+              app.showWarningDialog("Board Error","Cant load game board, try restarting the program");
           }
       } else {
           app.showWarningDialog("Error Connecting", "Couldn't connect to the server. Make sure that port and address are correct and try again.");
@@ -50,4 +50,3 @@ public class LoginConnectionForm {
 
 
 }
-//&& connection.test()

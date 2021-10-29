@@ -4,8 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GameBoardController">
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
@@ -99,6 +100,7 @@
             <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="7" />
             <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="8" />
             <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Go^" GridPane.rowIndex="10" />
 
 
         </children>

@@ -25,7 +25,9 @@ public class MonopolyClient extends Application {
     }
     public static final String CONNECTION_BOX_FXML = "connectionBox.fxml";
     public static final String GAMEBOARD_FXML = "GameBoard.fxml";
+
     Stage mainStage;
+    GameBoardController controller;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -52,11 +54,11 @@ public class MonopolyClient extends Application {
 
     public void showBoard() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        //controller = new BoardController(this);
-        //loader.setController(controller);
+        controller = new GameBoardController(this);
+        loader.setController(controller);
         loader.setLocation(getClass().getResource(GAMEBOARD_FXML));
-        Parent root = loader.load();
-        Scene scene = new Scene(root, 500, 500);
+        Parent root = loader.load(); //this is where it is failing
+        Scene scene = new Scene(root, 1000, 1000);
         mainStage.setScene(scene);
 
 

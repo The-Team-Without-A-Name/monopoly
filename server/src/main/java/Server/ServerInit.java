@@ -9,6 +9,10 @@ import java.util.Objects;
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
 
+/**
+ * This class initializes the server and displays result message.
+ */
+
 public class ServerInit {
     public static void main(String[] args) {
         QueuedThreadPool queuedThreadPool =

@@ -10,8 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 -Game Board in JavaFX
 
+-Added Classes into Library
+
+
 ### Changed
 -Connection Capabilites further developed
+
+-Login submission was converted to FXML
+
+-Updated Dice CLass
+
+-FXML implemented
+
+-Post & Get Methods Implemented
 
 ## [Unreleased]
 

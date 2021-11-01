@@ -37,7 +37,7 @@ public class Dice {
     //method for rolling dice
     public void roll(){
 
-        //this method should have some functionality to change the db(boolean) when two facevalues are equal.
+        //this method should have some functionality to change the db(boolean) when two face values are equal.
     }
 
     //returns true if last roll was double

@@ -16,6 +16,8 @@ public abstract class Space {
     private int landOn;
 
      */
+    //default constructor
+    Space(){ }
 
     //constructor
     Space(String spaceName, int price, int rent, boolean owned, Player player){

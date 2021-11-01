@@ -9,6 +9,11 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
+/**
+ * LoginConnectionForm uses FXML button actions
+ * Warning dialogs for missing address, game board error, and connection error.
+ */
+
 public class LoginConnectionForm {
 
 

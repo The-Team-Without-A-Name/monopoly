@@ -7,6 +7,10 @@ import lombok.Setter;
 
  */
 
+/**
+ * BoardLocation uses getter and setter methods to find location
+ */
+
 public class BoardLocation {
     @Getter @Setter
     private int column;

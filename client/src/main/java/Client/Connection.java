@@ -8,7 +8,9 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.List;
 
-
+/**
+ * Connection class that connects with the server.
+ */
 
 public class Connection {
 
@@ -24,7 +26,7 @@ public class Connection {
     HttpClient client;
 
     //Private Default Constructor
-    private Connection() {
+    public Connection() {
     }
 
 

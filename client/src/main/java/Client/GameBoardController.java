@@ -11,6 +11,11 @@ import javafx.scene.shape.Rectangle;
 
 import java.io.FileNotFoundException;
 
+/**
+ * GameBoardController contains FXML objects, buttons, and methods.
+ * Sets up how the player moves along with the dice roll.
+ */
+
 public class GameBoardController {
 
     private MonopolyClient app;

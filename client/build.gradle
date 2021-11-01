@@ -19,7 +19,8 @@ repositories {
 dependencies {
     //JUnit Jupiter testing
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
 
     //Javalin
     implementation 'io.javalin:javalin:4.0.1'
@@ -30,8 +31,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.8'
 
 
-    testImplementation 'com.konghq:unirest-java:3.13.0'
-    testImplementation 'org.assertj:assertj-core:3.21.0'
+//    testImplementation 'com.konghq:unirest-java:3.13.0'
+//    testImplementation 'org.assertj:assertj-core:3.21.0'
 
 
 }

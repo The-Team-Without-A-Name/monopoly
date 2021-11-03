@@ -7,6 +7,7 @@ public class Player {
 
     // private instances for player
     private String playerName;
+    @lombok.Setter
     private BoardLocation playerLocation;
     private int playerBudget;
     private String gamePiece;
@@ -42,11 +43,6 @@ public class Player {
     //set player Name
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
-    }
-
-    //set player location
-    public void setPlayerLocation(BoardLocation playerLocation) {
-        this.playerLocation = playerLocation;
     }
 
     //set player location

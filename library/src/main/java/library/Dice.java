@@ -13,7 +13,7 @@ public class Dice {
     private  int faceValue1;
     private  int faceValue2;
     private Random randNum=new Random();
-    private boolean db;
+    private boolean db;  //boolean for double or not
 
 
    // constructor for dice object
@@ -37,7 +37,17 @@ public class Dice {
     //method for rolling dice
     public void roll(){
 
-        //this method should have some functionality to change the db(boolean) when two face values are equal.
+        //get the face values of dice using random numbers
+        faceValue1= randNum.nextInt(6)+1;
+        faceValue2= randNum.nextInt(6)+1;
+
+        //if two face values are equal then that is a double.
+        if (faceValue1==faceValue2){
+            db=true;
+        }
+        else db=false;
+        diceTotal=faceValue1+faceValue2;  //if two face values are not equal then add both to get the dice total.
+
     }
 
     //returns true if last roll was double

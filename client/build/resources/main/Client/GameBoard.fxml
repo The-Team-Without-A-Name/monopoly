@@ -6,20 +6,10 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
-
-
-    <VBox fx:id="buttonBox" layoutX="27.0" layoutY="189.0">
-        <Button alignment="CENTER" onAction="#onStartButtonClick" text="Start!" />
-        <Button alignment="CENTER" onAction="#onDiceButtonClick" text="Roll" />
-        <Button alignment="CENTER" onAction="#onMoveButtonClick" text="Move" />
-        <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
-
-        <Label fx:id="dice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    </VBox>
 
     <Rectangle fx:id="piece" fill="BLACK" height="25" layoutX="502.0" layoutY="108.0" stroke="#808080" strokeType="INSIDE" width="25" />
 
@@ -53,58 +43,67 @@
         </rowConstraints>
         <children>
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Rectangle fx:id="FreeParking" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="0" />
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+            <Rectangle fx:id="KenAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Rectangle fx:id="Chance2" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Rectangle fx:id="IndAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Rectangle fx:id="IllAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Rectangle fx:id="BORailroad" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <Rectangle fx:id="AtlAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Rectangle fx:id="VenAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+            <Rectangle fx:id="WaterWorks" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+            <Rectangle fx:id="MarvinGardens" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="9" GridPane.rowIndex="0" />
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+            <Rectangle fx:id="GoToJail" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="0" />
 
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+            <Rectangle fx:id="PacAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Rectangle fx:id="NorAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Rectangle fx:id="CommunityChest3" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+            <Rectangle fx:id="PenAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+            <Rectangle fx:id="ShortLine" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+            <Rectangle fx:id="Chance3" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+            <Rectangle fx:id="ParPla" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+            <Rectangle fx:id="LuxuryTax" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+            <Rectangle fx:id="BoardWalk" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="9" />
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+            <Rectangle fx:id="Go" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="10" GridPane.rowIndex="10" />
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+            <Rectangle fx:id="ConAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Rectangle fx:id="VerAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <Rectangle fx:id="Chance1" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Rectangle fx:id="OriAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <Rectangle fx:id="ReadingRailroad" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+            <Rectangle fx:id="IncomeTax" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <Rectangle fx:id="BalAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+            <Rectangle fx:id="CommunityChest1" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+            <Rectangle fx:id="MedAve" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="50" GridPane.columnIndex="9" GridPane.rowIndex="10" />
 
-            <Rectangle fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+            <Rectangle fx:id="Jail" fill="#10807f" height="100" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="10" />
 
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <Rectangle fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Go^" GridPane.rowIndex="10" />
+            <Rectangle fx:id="NewAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Rectangle fx:id="TenAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Rectangle fx:id="CommunityChest2" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Rectangle fx:id="StJamPla" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Rectangle fx:id="PennsylvaniaRailroad" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Rectangle fx:id="VirAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Rectangle fx:id="StaAve" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Rectangle fx:id="ElectricCompany" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Rectangle fx:id="StChaPla" fill="#10807f" height="50" stroke="#808080" strokeType="INSIDE" width="100" GridPane.columnIndex="0" GridPane.rowIndex="9" />
 
 
         </children>
     </GridPane>
+
+
+    <VBox fx:id="buttonBox" layoutX="400" layoutY="400" prefHeight="100.0" prefWidth="159.0">
+        <Button alignment="CENTER" onAction="#onStartButtonClick" text="Start!" />
+        <Button alignment="CENTER" onAction="#onDiceButtonClick" text="Roll" />
+        <Button alignment="CENTER" onAction="#onMoveButtonClick" text="Move" />
+        <ChoiceBox fx:id="themeBox" prefWidth="150.0" />
+
+        <Label fx:id="dice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    </VBox>
 
 
 </AnchorPane>

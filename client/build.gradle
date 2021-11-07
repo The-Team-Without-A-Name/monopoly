@@ -33,11 +33,6 @@ dependencies {
     //JSON
     implementation 'com.github.cliftonlabs:json-simple:3.1.0'
 
-
-//    testImplementation 'com.konghq:unirest-java:3.13.0'
-//    testImplementation 'org.assertj:assertj-core:3.21.0'
-
-
 }
 
 test {
@@ -62,3 +57,5 @@ application {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+

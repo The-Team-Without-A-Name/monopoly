@@ -3,32 +3,36 @@ package library;
 /** This is a class for handling players in Monopoly game
  * For now, this class contains only the general methods and instances.
  */
+
 public class Player {
 
     // private instances for player
     private String playerName;
     @lombok.Setter
-    private BoardLocation playerLocation;
-    private int playerBudget;
+    //private BoardLocation playerLocation;
+    public static int playerBudget;
     private String gamePiece;
     private boolean playerTurn=false;
-    private boolean inPrison=false;
+    public  boolean inPrison=false;
+    public  boolean getOutOfJailFree = false;
+    private int playerRow;
+    private int playerColumn;
 
     //constructor
     public Player(String playerName){
         this.playerName=playerName;
         playerBudget = 2000;
     }
-
+    Player player1=new Player("FirstPlayer");
     //return player's name
     public String getPlayerName() {
         return playerName;
     }
 
     //return player location
-    public BoardLocation getPlayerLocation() {
-        return playerLocation;
-    }
+    //public BoardLocation getPlayerLocation() {
+    //    return playerLocation;
+    //}
 
     //return playerBudget
     public int getPlayerBudget() {

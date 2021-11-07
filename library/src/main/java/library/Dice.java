@@ -9,11 +9,11 @@ import java.util.Random;
 //this class handles dice
 public class Dice {
 
-    private  int diceTotal;
-    private  int faceValue1;
-    private  int faceValue2;
-    private Random randNum=new Random();
-    private boolean db;  //boolean for double or not
+    private static int diceTotal;
+    private static int faceValue1;
+    private static int faceValue2;
+    private static Random randNum=new Random();
+    public static boolean db;  //boolean for double or not
 
 
    // constructor for dice object
@@ -35,7 +35,7 @@ public class Dice {
     }
 
     //method for rolling dice
-    public void roll(){
+    public static int roll(Player player){
 
         //get the face values of dice using random numbers
         faceValue1= randNum.nextInt(6)+1;
@@ -47,7 +47,7 @@ public class Dice {
         }
         else db=false;
         diceTotal=faceValue1+faceValue2;  //if two face values are not equal then add both to get the dice total.
-
+        return diceTotal;
     }
 
     //returns true if last roll was double

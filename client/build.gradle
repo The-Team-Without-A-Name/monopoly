@@ -28,7 +28,10 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
 
     //GSON
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //JSON
+    implementation 'com.github.cliftonlabs:json-simple:3.1.0'
 
 
 //    testImplementation 'com.konghq:unirest-java:3.13.0'

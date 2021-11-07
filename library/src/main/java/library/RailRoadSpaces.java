@@ -1,9 +1,11 @@
 package library;
 
+public class RailRoadSpaces extends Space{
+
+
 /**
  * handles Rail Road Space
  */
-public class RailroadSpace extends Space{
 
     //gets owner, method called from super class Space
     @Override

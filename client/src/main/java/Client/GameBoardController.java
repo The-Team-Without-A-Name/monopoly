@@ -10,7 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
 import java.io.FileNotFoundException;
-
+//import main.java.library.Dice;
+import library.Player;
 /**
  * GameBoardController contains FXML objects, buttons, and methods.
  * Sets up how the player moves along with the dice roll.
@@ -38,7 +39,7 @@ public class GameBoardController {
     @FXML
     private ChoiceBox choiceBox;
 
-
+    Player player2 = new Player();
 
 
     public GameBoardController(MonopolyClient app) { this.app = app;}
@@ -76,9 +77,11 @@ public class GameBoardController {
     }
 
     @FXML
+    //need to add a way to accept a player object and call diceroll, then use the returned value from diceroll to update movement and print the #
     protected void onDiceButtonClick() {
+
         //Need to send dice roll request to server
-        dice.setText("Dice rolled");
+        dice.setText("Dice rolled", + library.Diceroll(player1));
     }
 
     //Regular internal methods

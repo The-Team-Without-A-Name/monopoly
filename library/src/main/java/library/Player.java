@@ -1,7 +1,21 @@
 package library;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.BufferedWriter;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.HashMap;
+import java.util.Map;
 
 /** This is a class for handling players in Monopoly game
  * For now, this class contains only the general methods and instances.
+ * create json for player location, money, propertiesowned, etc so gamestate can be updated.
  */
 
 public class Player {
@@ -22,6 +36,77 @@ public class Player {
     public Player(String playerName){
         this.playerName=playerName;
         playerBudget = 2000;
+    }
+    private void CreatePlayer1JSON(Player player){
+        try{
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+
+            //Create Map for White Space Properties
+            Map<String, Object> player1 = new HashMap<>();
+            player1.put("Name","Player1" );
+            player1.put("Budget", 2000);
+            player1.put("GetOutOfJail", false);
+            player1.put("Properties", "Null");
+
+            Gson gson = new Gson();
+
+            // write JSON to file
+            writer.write(gson.toJson(player1));
+
+
+            writer.close();
+
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    private void CreatePlayer2JSON(Player player){
+        try{
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+
+            //Create Map for White Space Properties
+            Map<String, Object> player2 = new HashMap<>();
+            player2.put("Name","Player2" );
+            player2.put("Budget", 2000);
+            player2.put("GetOutOfJail", false);
+            player2.put("Properties", "Null");
+
+            Gson gson = new Gson();
+
+            // write JSON to file
+            writer.write(gson.toJson(player2));
+
+
+            writer.close();
+
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void ReadPlayerInfo(String playerName){
+
+        try{
+
+            //Create Reader
+            Reader reader = Files.newBufferedReader(Paths.get("playerinfo.json"));
+
+            //Create JsonObject Parser
+            JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
+
+            //read space details
+            JsonObject space = parser.get(playerName).getAsJsonObject();
+
+            String name = parser.get("Name").getAsString();
+            int price = parser.get("Budget").getAsInt();
+            boolean isOwned = parser.get("GetOutOfJail").getAsBoolean();
+            String set = parser.get("Properties").getAsString();
+
+            //close reader
+            reader.close();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
     Player player1=new Player("FirstPlayer");
     //return player's name
@@ -95,6 +180,8 @@ public class Player {
     /*Contains other methods
     as required
      */
+
+
 
 
 

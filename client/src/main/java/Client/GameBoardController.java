@@ -10,11 +10,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import library.Player;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-//import main.java.library.Dice;
-import library.Player;
 /**
  * @author Madison May
  * GameBoardController contains FXML objects, buttons, and methods.
@@ -34,7 +33,6 @@ public class GameBoardController {
     private final String frog = "src/main/resources/Client/" + classicThemeLocation + "/frog.jpg";
 
     private MonopolyClient app;
-
 
     //FXML objects
     @FXML
@@ -137,7 +135,7 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
-    Player player2 = new Player();
+    private Player player1;
 
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException { this.app = app;}
@@ -165,7 +163,7 @@ public class GameBoardController {
     protected void onDiceButtonClick() {
 
         //Need to send dice roll request to server
-        dice.setText("Dice rolled", + library.Diceroll(player1));
+        dice.setText("Dice rolled");
     }
     /*
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints

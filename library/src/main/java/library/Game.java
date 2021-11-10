@@ -1,7 +1,7 @@
 package library;
 
-import lombok.Getter;
-import lombok.Setter;
+//import lombok.Getter;
+//import lombok.Setter;
 
 /**
  * Game class uses getter/setter methods
@@ -13,7 +13,7 @@ import lombok.Setter;
 
 public class Game {
 
-    @Getter @Setter
+    //@Getter @Setter
     private GameState gameState;
 
     public Game(){

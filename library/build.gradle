@@ -28,10 +28,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+task prepareKotlinBuildScriptModel {
+
+}
 
 //Application needed to run a project -- Madison
 
-application {
-    applicationName = 'server-monopoly'
-    mainClass = 'Server.ServerInit'
-}
+//application {
+  //  applicationName = 'server-monopoly'
+//dmainClass = 'Server.ServerInit'
+//}

@@ -135,7 +135,7 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
-    private Player player1;
+    //private Player player1;
 
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException { this.app = app;}

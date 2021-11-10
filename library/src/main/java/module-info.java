@@ -1,5 +1,5 @@
 module library {
     requires com.google.gson;
-    requires lombok;
+    //requires lombok;
     exports library;
 }

@@ -22,7 +22,7 @@ public class Player {
 
     // private instances for player
     private String playerName;
-    @lombok.Setter
+    //@lombok.Setter
     //private BoardLocation playerLocation;
     public static int playerBudget;
     private String gamePiece;

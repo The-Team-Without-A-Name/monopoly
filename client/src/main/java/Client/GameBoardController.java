@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import library.Dice;
 import library.Player;
 
 import java.io.FileInputStream;
@@ -36,19 +37,39 @@ public class GameBoardController {
 
     //FXML objects
     @FXML
-    private Label dice;
-
-    @FXML
     private GridPane gameBoard;
 
     @FXML
-    private Rectangle piece;
-
-    @FXML
-    private VBox buttonBox;
-
-    @FXML
     private ChoiceBox themeBox;
+
+
+    /*
+     Player 1's things
+     */
+    @FXML
+    private Label p1DiceLabel;
+
+    @FXML
+    private VBox p1ButtonBox;
+
+    @FXML
+    private Rectangle p1Piece;
+
+
+    /*
+     Player 2's things
+     */
+    @FXML
+    private Label p2DiceLabel;
+
+    @FXML
+    private VBox p2ButtonBox;
+
+    @FXML
+    private Rectangle p2Piece;
+
+
+
 
     /*
      * I'm sure there's a more efficient way to do this, but I do not know it. I am going to have to manually make a
@@ -135,7 +156,10 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
-    //private Player player1;
+    private Player player1;
+    private Player player2;
+
+    private Dice dice;
 
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException { this.app = app;}
@@ -144,26 +168,38 @@ public class GameBoardController {
     @FXML
     protected void onStartButtonClick() throws FileNotFoundException {
 
-        if (!gameBoard.getChildren().contains(piece)) {
-            gameBoard.add(piece, 10, 10);
-            gameBoard.setHalignment(piece, HPos.CENTER);
-            gameBoard.setValignment(piece, VPos.CENTER);
+        if (!gameBoard.getChildren().contains(p1Piece)) {
+            gameBoard.add(p1Piece, 10, 10);
+            gameBoard.add(p2Piece, 10, 10);
+            gameBoard.setHalignment(p1Piece, HPos.CENTER);
+            gameBoard.setValignment(p1Piece, VPos.CENTER);
+
+            gameBoard.setHalignment(p2Piece, HPos.CENTER);
+            gameBoard.setValignment(p2Piece, VPos.CENTER);
         }
         setTheme(resource + basicThemeLocation);
-    }
-    @FXML
-    protected void onMoveButtonClick() {
-        //move for some input from server
-        Move(4);
     }
 
 
     @FXML
     //need to add a way to accept a player object and call diceroll, then use the returned value from diceroll to update movement and print the #
-    protected void onDiceButtonClick() {
+    protected void onP1DiceButtonClick() {
 
         //Need to send dice roll request to server
-        dice.setText("Dice rolled");
+        int diceVal = dice.roll(player1);
+        p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
+        Move(diceVal, p1Piece);
+
+    }
+
+    @FXML
+    protected void onP2DiceButtonClick() {
+
+        //Need to send dice roll request to server
+        int diceVal = dice.roll(player2);
+        p2DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
+        Move(diceVal, p2Piece);
+
     }
     /*
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints
@@ -219,7 +255,7 @@ public class GameBoardController {
     protected ImagePattern getImageFill(String image) throws FileNotFoundException {
         return new ImagePattern(new Image(new FileInputStream(image)));
     }
-    protected void Move(int movement) {
+    protected void Move(int movement, Rectangle piece) {
         if (gameBoard.getChildren().contains(piece)) {
             for(int i = 0; i < movement; i++) {
                 int column = GridPane.getColumnIndex(piece);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="serverTest.OneEqualsOne" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-01T01:03:25" hostname="madz" time="0.012">
+<testsuite name="serverTest.OneEqualsOne" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-11T17:01:21" hostname="madz" time="0.014">
   <properties/>
-  <testcase name="constructorTest()" classname="serverTest.OneEqualsOne" time="0.012"/>
+  <testcase name="constructorTest()" classname="serverTest.OneEqualsOne" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

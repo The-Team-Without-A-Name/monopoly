@@ -1,15 +1,13 @@
 package library;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.BufferedWriter;
 import java.io.Reader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +28,23 @@ public class Player {
     public  boolean inPrison=false;
     public  boolean getOutOfJailFree = false;
     private int playerRow;
+
+    public int getPlayerRow() {
+        return playerRow;
+    }
+
+    public void setPlayerRow(int playerRow) {
+        this.playerRow = playerRow;
+    }
+
+    public int getPlayerColumn() {
+        return playerColumn;
+    }
+
+    public void setPlayerColumn(int playerColumn) {
+        this.playerColumn = playerColumn;
+    }
+
     private int playerColumn;
 
     //constructor

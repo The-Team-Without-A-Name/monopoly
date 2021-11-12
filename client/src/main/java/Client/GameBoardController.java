@@ -157,13 +157,17 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
+
     private Player player1;
     private Player player2;
 
     private Dice dice;
 
 
-    public GameBoardController(MonopolyClient app) throws FileNotFoundException { this.app = app;}
+    public GameBoardController(MonopolyClient app) throws FileNotFoundException {
+        this.app = app;
+
+    }
 
     //FXML button methods
     @FXML
@@ -177,6 +181,7 @@ public class GameBoardController {
 
             gameBoard.setHalignment(p2Piece, HPos.CENTER);
             gameBoard.setValignment(p2Piece, VPos.CENTER);
+
         }
         setTheme(resource + basicThemeLocation);
     }
@@ -191,6 +196,9 @@ public class GameBoardController {
         p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p1Piece);
 
+//        //update player position
+//        player1.setPlayerColumn(GridPane.getColumnIndex(p1Piece));
+//        player1.setPlayerRow(GridPane.getColumnIndex(p1Piece));
     }
 
     @FXML
@@ -201,6 +209,9 @@ public class GameBoardController {
         p2DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p2Piece);
 
+//        //update player position
+//        player2.setPlayerColumn(GridPane.getColumnIndex(p2Piece));
+//        player2.setPlayerRow(GridPane.getColumnIndex(p2Piece));
     }
     /*
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints
@@ -272,6 +283,14 @@ public class GameBoardController {
 
             }
         }
+    }
+    public int[] getPlayer1Position() {
+        int row = GridPane.getRowIndex(p1Piece);
+        int column = GridPane.getColumnIndex(p1Piece);
+        int[] position = new int[2];
+        position[0] = row;
+        position[1] = column;
+        return position;
     }
 //    protected void SetThemeBox() {
 //        themeBox.

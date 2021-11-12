@@ -4,11 +4,7 @@ import io.javalin.Javalin;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
-import java.util.List;
-import java.util.Objects;
-
 import static io.javalin.apibuilder.ApiBuilder.get;
-import static io.javalin.apibuilder.ApiBuilder.post;
 
 /**
  * This class initializes the server and displays result message.

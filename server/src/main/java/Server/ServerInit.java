@@ -27,7 +27,7 @@ public class ServerInit {
         app.get("/", ctx -> ctx.result("Server Launch Successful"));
         app.routes(() -> {
 
-            get("/api/state", ctx -> ctx.json(Player.ReadGameState()));
+            //get("/api/state", ctx -> ctx.json(Player.ReadGameState()));
             post("/api/update", ctx -> {
 
             });

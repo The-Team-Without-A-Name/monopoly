@@ -42,18 +42,18 @@ public class Player {
             BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
 
             //Create Map for White Space Properties
-            Map<String, Object> player1 = new HashMap<>();
-            player1.put("Name","Player1" );
-            player1.put("Budget", 2000);
-            player1.put("GetOutOfJail", false);
-            player1.put("Properties", "Null");
-            player1.put("Position X",0 );
-            player1.put("Position Y",0 );
+            Map<String, Object> player1obj = new HashMap<>();
+            player1obj.put("Name","Player1" );
+            player1obj.put("Budget", 2000);
+            player1obj.put("GetOutOfJail", false);
+            player1obj.put("Properties", "Null");
+            player1obj.put("Position X",0 );
+            player1obj.put("Position Y",0 );
 
             Gson gson = new Gson();
 
             // write JSON to file
-            writer.write(gson.toJson(player1));
+            writer.write(gson.toJson(player1obj));
 
 
             writer.close();
@@ -62,23 +62,23 @@ public class Player {
             ex.printStackTrace();
         }
     }
-    private void CreatePlayer2JSON(Player player){
+    public void CreatePlayer2JSON(Player player){
         try{
             BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
 
             //Create Map for White Space Properties
-            Map<String, Object> player2 = new HashMap<>();
-            player2.put("Name","Player2" );
-            player2.put("Budget", 2000);
-            player2.put("GetOutOfJail", false);
-            player2.put("Properties", "Null");
-            player2.put("Position X",0 );
-            player2.put("Position Y",0 );
+            Map<String, Object> player2obj = new HashMap<>();
+            player2obj.put("Name","Player2" );
+            player2obj.put("Budget", 2000);
+            player2obj.put("GetOutOfJail", false);
+            player2obj.put("Properties", "Null");
+            player2obj.put("Position X",0 );
+            player2obj.put("Position Y",0 );
 
             Gson gson = new Gson();
 
             // write JSON to file
-            writer.write(gson.toJson(player2));
+            writer.write(gson.toJson(player2obj));
 
 
             writer.close();

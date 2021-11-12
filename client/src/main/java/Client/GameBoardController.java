@@ -12,26 +12,12 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import library.Dice;
 import library.Player;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import java.io.BufferedWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
+
+import java.io.*;
+import java.text.ParseException;
+
 
 
 /**
@@ -175,23 +161,10 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
-<<<<<<< HEAD
 
     private Player player1;
     private Player player2;
-=======
-////<<<<<<< Updated upstream
- //   private Player player1;
-  //  private Player player2;
->>>>>>> 2a9c97359298f20ceec8223682f615f8284d7307
-
     private Dice dice;
-
-//=======
-    //private Player player1;
-Player player1 = new Player("player1");
-Player player2 = new Player("player2");
-//>>>>>>> Stashed changes
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException {
         this.app = app;
@@ -214,15 +187,13 @@ Player player2 = new Player("player2");
         }
         setTheme(resource + basicThemeLocation);
     }
-//<<<<<<< Updated upstream
-//=======
+
     @FXML
     protected void onMoveButtonClick() {
         //player2.Create(player2);
         //move for some input from server
         //Move(4);
     }
-//>>>>>>> Stashed changes
 
 
     @FXML

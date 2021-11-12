@@ -40,6 +40,9 @@
       <module name="client.main" target="16" />
       <module name="client.test" target="16" />
       <module name="Client.test" target="16" />
+      <module name="library" target="16" />
+      <module name="library.main" target="16" />
+      <module name="library.test" target="16" />
       <module name="server" target="16" />
       <module name="server.main" target="16" />
       <module name="server.test" target="16" />

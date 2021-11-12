@@ -13,8 +13,26 @@ import javafx.scene.shape.Rectangle;
 import library.Dice;
 import library.Player;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.BufferedWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
+
 
 /**
  * @author Madison May
@@ -157,12 +175,23 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
+<<<<<<< HEAD
 
     private Player player1;
     private Player player2;
+=======
+////<<<<<<< Updated upstream
+ //   private Player player1;
+  //  private Player player2;
+>>>>>>> 2a9c97359298f20ceec8223682f615f8284d7307
 
     private Dice dice;
 
+//=======
+    //private Player player1;
+Player player1 = new Player("player1");
+Player player2 = new Player("player2");
+//>>>>>>> Stashed changes
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException {
         this.app = app;
@@ -185,6 +214,15 @@ public class GameBoardController {
         }
         setTheme(resource + basicThemeLocation);
     }
+//<<<<<<< Updated upstream
+//=======
+    @FXML
+    protected void onMoveButtonClick() {
+        //player2.Create(player2);
+        //move for some input from server
+        //Move(4);
+    }
+//>>>>>>> Stashed changes
 
 
     @FXML
@@ -212,6 +250,27 @@ public class GameBoardController {
 //        //update player position
 //        player2.setPlayerColumn(GridPane.getColumnIndex(p2Piece));
 //        player2.setPlayerRow(GridPane.getColumnIndex(p2Piece));
+    }
+    @FXML
+    protected void onP1PropertyPurchase() throws InterruptedException, IOException, ParseException {
+
+        JSONObject value;
+        try (Reader in = new InputStreamReader(getClass().getResourceAsStream("/playerinfo.json"))) {
+            JSONParser parser = new JSONParser();
+            value = (JSONObject) parser.parse(in);
+        }
+        JSONObject player1obj = (JSONObject) value.get("player1");
+
+        // update properties
+        String propertyname = player1.getPosition;
+        player1obj.put("Properties", propertyname);
+        // need to update budget as well as assign that property a true isOwned bool
+
+        // write to playerinfo file
+        try (Writer out = new FileWriter("playerinfo.json")) {
+            out.write(value.toJSONString());
+        }
+
     }
     /*
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints

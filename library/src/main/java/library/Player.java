@@ -52,21 +52,23 @@ public class Player {
         this.playerName=playerName;
         playerBudget = 2000;
     }
-    private void CreatePlayer1JSON(Player player){
+    public void CreatePlayer1JSON(Player player){
         try{
             BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
 
             //Create Map for White Space Properties
-            Map<String, Object> player1 = new HashMap<>();
-            player1.put("Name","Player1" );
-            player1.put("Budget", 2000);
-            player1.put("GetOutOfJail", false);
-            player1.put("Properties", "Null");
+            Map<String, Object> player1obj = new HashMap<>();
+            player1obj.put("Name","Player1" );
+            player1obj.put("Budget", 2000);
+            player1obj.put("GetOutOfJail", false);
+            player1obj.put("Properties", "Null");
+            player1obj.put("Position X",0 );
+            player1obj.put("Position Y",0 );
 
             Gson gson = new Gson();
 
             // write JSON to file
-            writer.write(gson.toJson(player1));
+            writer.write(gson.toJson(player1obj));
 
 
             writer.close();
@@ -75,21 +77,23 @@ public class Player {
             ex.printStackTrace();
         }
     }
-    private void CreatePlayer2JSON(Player player){
+    public void CreatePlayer2JSON(Player player){
         try{
             BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
 
             //Create Map for White Space Properties
-            Map<String, Object> player2 = new HashMap<>();
-            player2.put("Name","Player2" );
-            player2.put("Budget", 2000);
-            player2.put("GetOutOfJail", false);
-            player2.put("Properties", "Null");
+            Map<String, Object> player2obj = new HashMap<>();
+            player2obj.put("Name","Player2" );
+            player2obj.put("Budget", 2000);
+            player2obj.put("GetOutOfJail", false);
+            player2obj.put("Properties", "Null");
+            player2obj.put("Position X",0 );
+            player2obj.put("Position Y",0 );
 
             Gson gson = new Gson();
 
             // write JSON to file
-            writer.write(gson.toJson(player2));
+            writer.write(gson.toJson(player2obj));
 
 
             writer.close();
@@ -99,7 +103,7 @@ public class Player {
         }
     }
 
-    public void ReadPlayerInfo(String playerName){
+    public void ReadGameState(String player1, String player2){
 
         try{
 
@@ -110,12 +114,16 @@ public class Player {
             JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
 
             //read space details
-            JsonObject space = parser.get(playerName).getAsJsonObject();
+            JsonObject p1 = parser.get(player1).getAsJsonObject();
+            JsonObject p2 = parser.get(player2).getAsJsonObject();
 
             String name = parser.get("Name").getAsString();
             int price = parser.get("Budget").getAsInt();
             boolean isOwned = parser.get("GetOutOfJail").getAsBoolean();
             String set = parser.get("Properties").getAsString();
+            int xpos = parser.get("Position X").getAsInt();
+            int ypos = parser.get("Position y").getAsInt();
+
 
             //close reader
             reader.close();
@@ -123,7 +131,7 @@ public class Player {
             ex.printStackTrace();
         }
     }
-    Player player1=new Player("FirstPlayer");
+    //Player player1=new Player("FirstPlayer");
     //return player's name
     public String getPlayerName() {
         return playerName;

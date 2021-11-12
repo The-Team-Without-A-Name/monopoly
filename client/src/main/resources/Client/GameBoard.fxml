@@ -32,8 +32,8 @@
         <Label fx:id="p2DiceLabel" GridPane.columnIndex="2" GridPane.rowIndex="2" />
     </VBox>
 
-    <Rectangle fx:id="p1Piece" fill="BLACK" height="25" layoutX="502.0" layoutY="108.0" stroke="#808080" strokeType="INSIDE" width="25" />
-    <Rectangle fx:id="p2Piece" fill="BLACK" height="25" layoutX="502.0" layoutY="108.0" stroke="#808080" strokeType="INSIDE" width="25" />
+    <Rectangle fx:id="p1Piece" fill="#ec1600" height="25" layoutX="502.0" layoutY="108.0" stroke="#808080" strokeType="INSIDE" width="25" />
+    <Rectangle fx:id="p2Piece" fill="#1818fa" height="25" layoutX="502.0" layoutY="108.0" stroke="#808080" strokeType="INSIDE" width="25" />
 
     <GridPane fx:id="gameBoard" layoutX="189.0" layoutY="189.0">
         <columnConstraints>

@@ -15,6 +15,7 @@ import library.Player;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
 /**
  * @author Madison May
  * GameBoardController contains FXML objects, buttons, and methods.
@@ -183,7 +184,7 @@ public class GameBoardController {
 
     @FXML
     //need to add a way to accept a player object and call diceroll, then use the returned value from diceroll to update movement and print the #
-    protected void onP1DiceButtonClick() {
+    protected void onP1DiceButtonClick() throws InterruptedException {
 
         //Need to send dice roll request to server
         int diceVal = dice.roll(player1);
@@ -193,7 +194,7 @@ public class GameBoardController {
     }
 
     @FXML
-    protected void onP2DiceButtonClick() {
+    protected void onP2DiceButtonClick() throws InterruptedException {
 
         //Need to send dice roll request to server
         int diceVal = dice.roll(player2);
@@ -224,12 +225,12 @@ public class GameBoardController {
         VirAve.setFill(getImageFill(themeFolder + "VirginiaAvenue.png"));
         PennsylvaniaRailroad.setFill(getImageFill(themeFolder + "PennsylvaniaRailroad.png"));
         StJamPla.setFill(getImageFill(themeFolder + "StJamesPlace.png"));
-        CommunityChest2.setFill(getImageFill(themeFolder + "CommunityChest.png"));
+        CommunityChest2.setFill(getImageFill(themeFolder + "CommunityChest2.png"));
         TenAve.setFill(getImageFill(themeFolder + "TennesseeAvenue.png"));
         NewAve.setFill(getImageFill(themeFolder + "NewYorkAvenue.png"));
         FreeParking.setFill(getImageFill(themeFolder + "FreeParking.png"));
         KenAve.setFill(getImageFill(themeFolder + "KentuckyAvenue.png"));
-        Chance2.setFill((getImageFill(themeFolder + "Chance.png")));
+        Chance2.setFill((getImageFill(themeFolder + "Chance2.png")));
         IndAve.setFill(getImageFill(themeFolder + "IndianaAvenue.png"));
         IllAve.setFill(getImageFill(themeFolder + "IllinoisAvenue.png"));
         BORailroad.setFill(getImageFill(themeFolder + "BORailroad.png"));
@@ -240,10 +241,10 @@ public class GameBoardController {
         GoToJail.setFill(getImageFill(themeFolder + "GoToJail.png"));
         PacAve.setFill(getImageFill(themeFolder + "PacificAvenue.png"));
         NorAve.setFill(getImageFill(themeFolder + "NorthCarolinaAvenue.png"));
-        CommunityChest3.setFill(getImageFill(themeFolder + "CommunityChest.png"));
+        CommunityChest3.setFill(getImageFill(themeFolder + "CommunityChest3.png"));
         PenAve.setFill(getImageFill(themeFolder + "PennsylvaniaAvenue.png"));
         ShortLine.setFill(getImageFill(themeFolder + "ShortLine.png"));
-        Chance3.setFill(getImageFill(themeFolder + "Chance.png"));
+        Chance3.setFill(getImageFill(themeFolder + "Chance3.png"));
         ParPla.setFill(getImageFill(themeFolder + "ParkPlace.png"));
         LuxuryTax.setFill(getImageFill(themeFolder + "LuxuryTax.png"));
         BoardWalk.setFill(getImageFill(themeFolder + "Boardwalk.png"));
@@ -255,7 +256,7 @@ public class GameBoardController {
     protected ImagePattern getImageFill(String image) throws FileNotFoundException {
         return new ImagePattern(new Image(new FileInputStream(image)));
     }
-    protected void Move(int movement, Rectangle piece) {
+    protected void Move(int movement, Rectangle piece) throws InterruptedException {
         if (gameBoard.getChildren().contains(piece)) {
             for(int i = 0; i < movement; i++) {
                 int column = GridPane.getColumnIndex(piece);
@@ -267,6 +268,7 @@ public class GameBoardController {
                 if (onLeftColumn(column, row)) GridPane.setRowIndex(piece, row - 1);
                 GridPane.setHalignment(piece, HPos.CENTER);
                 GridPane.setValignment(piece, VPos.CENTER);
+
 
             }
         }

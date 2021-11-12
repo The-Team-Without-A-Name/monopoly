@@ -37,7 +37,7 @@ public class Player {
         this.playerName=playerName;
         playerBudget = 2000;
     }
-    private void CreatePlayer1JSON(Player player){
+    public void CreatePlayer1JSON(Player player){
         try{
             BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
 
@@ -47,6 +47,8 @@ public class Player {
             player1.put("Budget", 2000);
             player1.put("GetOutOfJail", false);
             player1.put("Properties", "Null");
+            player1.put("Position X",0 );
+            player1.put("Position Y",0 );
 
             Gson gson = new Gson();
 
@@ -70,6 +72,8 @@ public class Player {
             player2.put("Budget", 2000);
             player2.put("GetOutOfJail", false);
             player2.put("Properties", "Null");
+            player2.put("Position X",0 );
+            player2.put("Position Y",0 );
 
             Gson gson = new Gson();
 
@@ -84,7 +88,7 @@ public class Player {
         }
     }
 
-    public void ReadPlayerInfo(String playerName){
+    public void ReadGameState(String player1, String player2){
 
         try{
 
@@ -95,12 +99,16 @@ public class Player {
             JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
 
             //read space details
-            JsonObject space = parser.get(playerName).getAsJsonObject();
+            JsonObject p1 = parser.get(player1).getAsJsonObject();
+            JsonObject p2 = parser.get(player2).getAsJsonObject();
 
             String name = parser.get("Name").getAsString();
             int price = parser.get("Budget").getAsInt();
             boolean isOwned = parser.get("GetOutOfJail").getAsBoolean();
             String set = parser.get("Properties").getAsString();
+            int xpos = parser.get("Position X").getAsInt();
+            int ypos = parser.get("Position y").getAsInt();
+
 
             //close reader
             reader.close();
@@ -108,7 +116,7 @@ public class Player {
             ex.printStackTrace();
         }
     }
-    Player player1=new Player("FirstPlayer");
+    //Player player1=new Player("FirstPlayer");
     //return player's name
     public String getPlayerName() {
         return playerName;

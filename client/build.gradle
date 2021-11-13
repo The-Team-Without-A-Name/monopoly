@@ -8,13 +8,10 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
-modularity.disableEffectiveArgumentsAdjustment() // the fix
 
 repositories {
     mavenCentral()
 }
-
-
 
 dependencies {
     //JUnit Jupiter testing
@@ -31,20 +28,15 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     //JSON
-    implementation 'com.github.cliftonlabs:json-simple:3.1.0'
+//    implementation 'com.github.cliftonlabs:json-simple:3.1.0'
 
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-
-
 }
 
 test {
     useJUnitPlatform()
 }
 
-configurations {
-    testCompile
-}
 javafx {
     version = "16"
     modules = ['javafx.controls', 'javafx.fxml']
@@ -59,9 +51,5 @@ application {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-task prepareKotlinBuildScriptModel {
-
 }
 

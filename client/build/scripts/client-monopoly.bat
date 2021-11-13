@@ -33,7 +33,7 @@ set APP_HOME=%DIRNAME%..
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and CLIENT_MONOPOLY_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS="--module-path" "%APP_HOME%\lib" "--module" "Client/Client.MonopolyClient"
+set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -67,11 +67,11 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=
+set CLASSPATH=%APP_HOME%\lib\client-1.0-SNAPSHOT.jar;%APP_HOME%\lib\library-1.0-SNAPSHOT.jar;%APP_HOME%\lib\javalin-4.0.1.jar;%APP_HOME%\lib\slf4j-simple-1.7.31.jar;%APP_HOME%\lib\jackson-annotations-2.12.4.jar;%APP_HOME%\lib\jackson-core-2.12.4.jar;%APP_HOME%\lib\jackson-databind-2.12.4.jar;%APP_HOME%\lib\gson-2.8.8.jar;%APP_HOME%\lib\json-simple-1.1.1.jar;%APP_HOME%\lib\javafx-fxml-16-linux.jar;%APP_HOME%\lib\javafx-controls-16-linux.jar;%APP_HOME%\lib\javafx-controls-16.jar;%APP_HOME%\lib\javafx-graphics-16-linux.jar;%APP_HOME%\lib\javafx-graphics-16.jar;%APP_HOME%\lib\javafx-base-16-linux.jar;%APP_HOME%\lib\javafx-base-16.jar;%APP_HOME%\lib\slf4j-api-1.7.31.jar;%APP_HOME%\lib\jetty-webapp-9.4.43.v20210629.jar;%APP_HOME%\lib\websocket-server-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-servlet-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-security-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-server-9.4.43.v20210629.jar;%APP_HOME%\lib\kotlin-stdlib-jdk8-1.5.31.jar;%APP_HOME%\lib\junit-4.13.1.jar;%APP_HOME%\lib\websocket-servlet-9.4.43.v20210629.jar;%APP_HOME%\lib\javax.servlet-api-3.1.0.jar;%APP_HOME%\lib\websocket-client-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-client-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-http-9.4.43.v20210629.jar;%APP_HOME%\lib\websocket-common-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-io-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-xml-9.4.43.v20210629.jar;%APP_HOME%\lib\kotlin-stdlib-jdk7-1.5.31.jar;%APP_HOME%\lib\kotlin-stdlib-1.5.31.jar;%APP_HOME%\lib\jetty-util-ajax-9.4.43.v20210629.jar;%APP_HOME%\lib\jetty-util-9.4.43.v20210629.jar;%APP_HOME%\lib\websocket-api-9.4.43.v20210629.jar;%APP_HOME%\lib\annotations-13.0.jar;%APP_HOME%\lib\kotlin-stdlib-common-1.5.31.jar;%APP_HOME%\lib\hamcrest-core-1.3.jar
 
 
 @rem Execute client-monopoly
-"%JAVA_EXE%" %JAVA_OPTS% %CLIENT_MONOPOLY_OPTS% %DEFAULT_JVM_OPTS% %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CLIENT_MONOPOLY_OPTS%  -classpath "%CLASSPATH%" Client.MonopolyClient %*
 
 :end
 @rem End local scope for the variables with windows NT shell

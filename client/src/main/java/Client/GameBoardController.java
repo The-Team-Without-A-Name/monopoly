@@ -228,18 +228,18 @@ public class GameBoardController {
         JSONObject value;
         try (Reader in = new InputStreamReader(getClass().getResourceAsStream("/playerinfo.json"))) {
             JSONParser parser = new JSONParser();
-            value = (JSONObject) parser.parse(in);
+//            value = (JSONObject) parser.parse(in);
         }
-        JSONObject player1obj = (JSONObject) value.get("player1");
+//        JSONObject player1obj = (JSONObject) value.get("player1");
 
         // update properties
-        String propertyname = player1.getPosition;
-        player1obj.put("Properties", propertyname);
+//        String propertyname = player1.getPosition();
+//        player1obj.put("Properties", propertyname);
         // need to update budget as well as assign that property a true isOwned bool
 
         // write to playerinfo file
         try (Writer out = new FileWriter("playerinfo.json")) {
-            out.write(value.toJSONString());
+//            out.write(value.toJSONString());
         }
 
     }

@@ -5,17 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd874ef8-ebf7-4b95-8642-a0ef97e6c01a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Client/GameBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Client/GameBoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME/shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex/shared.index.hashes.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_inputs.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_inputs_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_storage.storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_storage.storage.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/shared_indexes/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex/shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinextensionsinobjectsbyreceivertypeindex/org.jetbrains.kotlin.idea.stubindex.KotlinExtensionsInObjectsByReceiverTypeIndex.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinoverridableinternalmembersshortnameindex/org.jetbrains.kotlin.idea.stubindex.KotlinOverridableInternalMembersShortNameIndex.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinprobablycontractedfunctionshortnameindex/org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex.storage.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/libs/library-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../library/build/libs/library-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../library/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +115,74 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/..">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="library" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="monopoly" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -56,6 +206,111 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle " />
+      <command value="gradle :client:run" />
+      <command value="gradle :server:run" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.client [:server:run]">
+    <configuration name="MonopolyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.MonopolyClient" />
+      <module name="monopoly.client.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerInit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerInit" />
+      <module name="monopoly.server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client [:client:run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":client:run" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="client [:server:run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":server:run" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="client" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.client [:server:run]" />
+        <item itemvalue="Gradle.client [:client:run]" />
+        <item itemvalue="Gradle.client" />
+        <item itemvalue="Application.ServerInit" />
+        <item itemvalue="Application.MonopolyClient" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -12,9 +12,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import library.Dice;
 import library.Player;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.text.ParseException;
+
+
 
 /**
  * @author Madison May
@@ -157,13 +161,15 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
+
     private Player player1;
     private Player player2;
-
     private Dice dice;
 
+    public GameBoardController(MonopolyClient app) throws FileNotFoundException {
+        this.app = app;
 
-    public GameBoardController(MonopolyClient app) throws FileNotFoundException { this.app = app;}
+    }
 
     //FXML button methods
     @FXML
@@ -177,8 +183,16 @@ public class GameBoardController {
 
             gameBoard.setHalignment(p2Piece, HPos.CENTER);
             gameBoard.setValignment(p2Piece, VPos.CENTER);
+
         }
         setTheme(resource + basicThemeLocation);
+    }
+
+    @FXML
+    protected void onMoveButtonClick() {
+        //player2.Create(player2);
+        //move for some input from server
+        //Move(4);
     }
 
 
@@ -191,6 +205,9 @@ public class GameBoardController {
         p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p1Piece);
 
+//        //update player position
+//        player1.setPlayerColumn(GridPane.getColumnIndex(p1Piece));
+//        player1.setPlayerRow(GridPane.getColumnIndex(p1Piece));
     }
 
     @FXML
@@ -200,6 +217,30 @@ public class GameBoardController {
         int diceVal = dice.roll(player2);
         p2DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p2Piece);
+
+//        //update player position
+//        player2.setPlayerColumn(GridPane.getColumnIndex(p2Piece));
+//        player2.setPlayerRow(GridPane.getColumnIndex(p2Piece));
+    }
+    @FXML
+    protected void onP1PropertyPurchase() throws InterruptedException, IOException, ParseException {
+
+        JSONObject value;
+        try (Reader in = new InputStreamReader(getClass().getResourceAsStream("/playerinfo.json"))) {
+            JSONParser parser = new JSONParser();
+//            value = (JSONObject) parser.parse(in);
+        }
+//        JSONObject player1obj = (JSONObject) value.get("player1");
+
+        // update properties
+//        String propertyname = player1.getPosition();
+//        player1obj.put("Properties", propertyname);
+        // need to update budget as well as assign that property a true isOwned bool
+
+        // write to playerinfo file
+        try (Writer out = new FileWriter("playerinfo.json")) {
+//            out.write(value.toJSONString());
+        }
 
     }
     /*
@@ -272,6 +313,14 @@ public class GameBoardController {
 
             }
         }
+    }
+    public int[] getPlayer1Position() {
+        int row = GridPane.getRowIndex(p1Piece);
+        int column = GridPane.getColumnIndex(p1Piece);
+        int[] position = new int[2];
+        position[0] = row;
+        position[1] = column;
+        return position;
     }
 //    protected void SetThemeBox() {
 //        themeBox.

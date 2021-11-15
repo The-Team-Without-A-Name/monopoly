@@ -5,17 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import library.Player;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.Optional;
 
 public class MonopolyClient extends Application {
 
@@ -25,6 +18,7 @@ public class MonopolyClient extends Application {
     }
     public static final String CONNECTION_BOX_FXML = "connectionBox.fxml";
     public static final String GAMEBOARD_FXML = "GameBoard.fxml";
+
 
     Stage mainStage;
     GameBoardController controller;

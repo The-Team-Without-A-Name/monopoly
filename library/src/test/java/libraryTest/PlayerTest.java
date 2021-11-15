@@ -1,8 +1,15 @@
 package libraryTest;
 
+import com.google.gson.Gson;
 import library.Player;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PlayerTest {
     Player testPlayer = new Player("testPlayer");
@@ -15,4 +22,29 @@ public class PlayerTest {
     public void isNotInPrison() {
         Assertions.assertFalse(testPlayer.isInPrison());
     }
+
+  /*  @Test
+    public void testCreatePlayer1JSON(){
+        try{
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+            Map<String, Object> obj = new HashMap<>();
+            obj.put("Name","Player1" );
+            obj.put("Budget", 2000);
+            obj.put("GetOutOfJail", false);
+            obj.put("Properties", "Null");
+
+            Gson gson = new Gson();
+
+            // write JSON to file
+            Assertions.assertNotNull(writer.write(gson.toJson(obj)));
+            writer.close();
+
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+
+    }
+    
+   */
 }

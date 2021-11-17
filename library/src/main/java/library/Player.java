@@ -11,201 +11,196 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-/** This is a class for handling players in Monopoly game
- * For now, this class contains only the general methods and instances.
- * create json for player location, money, propertiesowned, etc so gamestate can be updated.
+/**
+ * This is a class for handling players in Monopoly game For now, this class contains only the
+ * general methods and instances. create json for player location, money, propertiesowned, etc so
+ * gamestate can be updated.
  */
-
 public class Player {
 
-    // private instances for player
-    private String playerName;
-    //@lombok.Setter
-    //private BoardLocation playerLocation;
-    public static int playerBudget;
-    private String gamePiece;
-    private boolean playerTurn=false;
-    public  boolean inPrison=false;
-    public  boolean getOutOfJailFree = false;
-    private int playerRow;
+  // private instances for player
+  private String playerName;
+  // @lombok.Setter
+  // private BoardLocation playerLocation;
+  public static int playerBudget;
+  private String gamePiece;
+  private boolean playerTurn = false;
+  public boolean inPrison = false;
+  public boolean getOutOfJailFree = false;
+  private int playerRow;
 
-    public int getPlayerRow() {
-        return playerRow;
+  public int getPlayerRow() {
+    return playerRow;
+  }
+
+  public void setPlayerRow(int playerRow) {
+    this.playerRow = playerRow;
+  }
+
+  public int getPlayerColumn() {
+    return playerColumn;
+  }
+
+  public void setPlayerColumn(int playerColumn) {
+    this.playerColumn = playerColumn;
+  }
+
+  private int playerColumn;
+
+  // constructor
+  public Player(String playerName) {
+    this.playerName = playerName;
+    playerBudget = 2000;
+  }
+
+  public void CreatePlayer1JSON(Player player) {
+    try {
+      BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+
+      // Create Map for White Space Properties
+      Map<String, Object> player1obj = new HashMap<>();
+      player1obj.put("Name", "Player1");
+      player1obj.put("Budget", 2000);
+      player1obj.put("GetOutOfJail", false);
+      player1obj.put("Properties", "Null");
+      player1obj.put("Position X", 0);
+      player1obj.put("Position Y", 0);
+
+      Gson gson = new Gson();
+
+      // write JSON to file
+      writer.write(gson.toJson(player1obj));
+
+      writer.close();
+
+    } catch (Exception ex) {
+      ex.printStackTrace();
     }
+  }
 
-    public void setPlayerRow(int playerRow) {
-        this.playerRow = playerRow;
+  public void CreatePlayer2JSON(Player player) {
+    try {
+      BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+
+      // Create Map for White Space Properties
+      Map<String, Object> player2obj = new HashMap<>();
+      player2obj.put("Name", "Player2");
+      player2obj.put("Budget", 2000);
+      player2obj.put("GetOutOfJail", false);
+      player2obj.put("Properties", "Null");
+      player2obj.put("Position X", 0);
+      player2obj.put("Position Y", 0);
+
+      Gson gson = new Gson();
+
+      // write JSON to file
+      writer.write(gson.toJson(player2obj));
+
+      writer.close();
+
+    } catch (Exception ex) {
+      ex.printStackTrace();
     }
+  }
 
-    public int getPlayerColumn() {
-        return playerColumn;
+  public void ReadGameState(String player1, String player2) {
+
+    try {
+
+      // Create Reader
+      Reader reader = Files.newBufferedReader(Paths.get("playerinfo.json"));
+
+      // Create JsonObject Parser
+      JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
+
+      // read space details
+      JsonObject p1 = parser.get(player1).getAsJsonObject();
+      JsonObject p2 = parser.get(player2).getAsJsonObject();
+
+      String name = parser.get("Name").getAsString();
+      int price = parser.get("Budget").getAsInt();
+      boolean isOwned = parser.get("GetOutOfJail").getAsBoolean();
+      String set = parser.get("Properties").getAsString();
+      int xpos = parser.get("Position X").getAsInt();
+      int ypos = parser.get("Position y").getAsInt();
+
+      // close reader
+      reader.close();
+    } catch (Exception ex) {
+      ex.printStackTrace();
     }
+  }
+  // Player player1=new Player("FirstPlayer");
+  // return player's name
+  public String getPlayerName() {
+    return playerName;
+  }
 
-    public void setPlayerColumn(int playerColumn) {
-        this.playerColumn = playerColumn;
-    }
+  // return player location
+  // public BoardLocation getPlayerLocation() {
+  //    return playerLocation;
+  // }
 
-    private int playerColumn;
+  // return playerBudget
+  public int getPlayerBudget() {
+    return playerBudget;
+  }
 
-    //constructor
-    public Player(String playerName){
-        this.playerName=playerName;
-        playerBudget = 2000;
-    }
-    public void CreatePlayer1JSON(Player player){
-        try{
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+  // return gamePiece
+  public String getGamePiece() {
+    return gamePiece;
+  }
 
-            //Create Map for White Space Properties
-            Map<String, Object> player1obj = new HashMap<>();
-            player1obj.put("Name","Player1" );
-            player1obj.put("Budget", 2000);
-            player1obj.put("GetOutOfJail", false);
-            player1obj.put("Properties", "Null");
-            player1obj.put("Position X",0 );
-            player1obj.put("Position Y",0 );
+  // set player Name
+  public void setPlayerName(String playerName) {
+    this.playerName = playerName;
+  }
 
-            Gson gson = new Gson();
+  // set player location
+  public void setPlayerBudget(int playerBudget) {
+    this.playerBudget = playerBudget;
+  }
 
-            // write JSON to file
-            writer.write(gson.toJson(player1obj));
+  // set game piece
+  public void setGamePiece(String gamePiece) {
+    this.gamePiece = gamePiece;
+  }
 
+  // set the player turn
+  public void setPlayerTurn(boolean playerTurn) {
+    this.playerTurn = playerTurn;
+  }
 
-            writer.close();
+  // returns true if player is in prison state
+  public boolean isInPrison() {
+    return inPrison;
+  }
 
-        }catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-    public void CreatePlayer2JSON(Player player){
-        try{
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get("playerinfo.json"));
+  // returns true if it is players turn
+  public boolean isPlayerTurn() {
+    return playerTurn;
+  }
 
-            //Create Map for White Space Properties
-            Map<String, Object> player2obj = new HashMap<>();
-            player2obj.put("Name","Player2" );
-            player2obj.put("Budget", 2000);
-            player2obj.put("GetOutOfJail", false);
-            player2obj.put("Properties", "Null");
-            player2obj.put("Position X",0 );
-            player2obj.put("Position Y",0 );
+  // To-string if needed
+  public String toString() {
+    // returns null for now, will be changed later
 
-            Gson gson = new Gson();
+    return null;
+  }
 
-            // write JSON to file
-            writer.write(gson.toJson(player2obj));
+  // check to see if player is bankrupt
+  public boolean isBankrupt() {
+    return playerBudget <= 0;
+  }
 
+  // add property that player owns
+  public void addProperty() {
 
-            writer.close();
+    // add the new property owned to previously owned.
+  }
 
-        }catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void ReadGameState(String player1, String player2){
-
-        try{
-
-            //Create Reader
-            Reader reader = Files.newBufferedReader(Paths.get("playerinfo.json"));
-
-            //Create JsonObject Parser
-            JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
-
-            //read space details
-            JsonObject p1 = parser.get(player1).getAsJsonObject();
-            JsonObject p2 = parser.get(player2).getAsJsonObject();
-
-            String name = parser.get("Name").getAsString();
-            int price = parser.get("Budget").getAsInt();
-            boolean isOwned = parser.get("GetOutOfJail").getAsBoolean();
-            String set = parser.get("Properties").getAsString();
-            int xpos = parser.get("Position X").getAsInt();
-            int ypos = parser.get("Position y").getAsInt();
-
-
-            //close reader
-            reader.close();
-        }catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-    //Player player1=new Player("FirstPlayer");
-    //return player's name
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    //return player location
-    //public BoardLocation getPlayerLocation() {
-    //    return playerLocation;
-    //}
-
-    //return playerBudget
-    public int getPlayerBudget() {
-        return playerBudget;
-    }
-
-    //return gamePiece
-    public String getGamePiece() {
-        return gamePiece;
-    }
-
-    //set player Name
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    //set player location
-    public void setPlayerBudget(int playerBudget) {
-        this.playerBudget = playerBudget;
-    }
-
-    //set game piece
-    public void setGamePiece(String gamePiece) {
-        this.gamePiece = gamePiece;
-    }
-
-    //set the player turn
-    public void setPlayerTurn(boolean playerTurn) {
-        this.playerTurn = playerTurn;
-    }
-
-    // returns true if player is in prison state
-    public boolean isInPrison() {
-        return inPrison;
-    }
-
-    //returns true if it is players turn
-    public boolean isPlayerTurn() {
-        return playerTurn;
-    }
-
-    //To-string if needed
-    public String toString(){
-        // returns null for now, will be changed later
-
-        return null;
-    }
-
-    //check to see if player is bankrupt
-    public boolean isBankrupt(){
-        return playerBudget<=0;
-    }
-
-    //add property that player owns
-    public void addProperty(){
-
-        //add the new property owned to previously owned.
-    }
-
-    /*Contains other methods
-    as required
-     */
-
-
-
-
+  /*Contains other methods
+  as required
+   */
 
 }

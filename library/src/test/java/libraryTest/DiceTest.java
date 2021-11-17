@@ -1,4 +1,3 @@
 package libraryTest;
 
-public class DiceTest {
-}
+public class DiceTest {}

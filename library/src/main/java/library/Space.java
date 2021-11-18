@@ -34,7 +34,7 @@ public class Space {
   Space() {}
 
   // constructor
-  Space(String spaceName, int price, int rent, boolean owned, Player player) {
+  public Space(String spaceName, int price, int rent, boolean owned, Player player) {
 
     this.spaceName = spaceName;
     this.price = price;

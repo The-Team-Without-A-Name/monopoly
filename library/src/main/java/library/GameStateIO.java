@@ -9,7 +9,7 @@ import java.io.*;
 
 public class GameStateIO {
 
-  private static final String saveLocation = "./resources/gameState.json";
+  private static final String saveLocation = "src/main/resources/gameState.json";
 
   public GameStateIO() {
 

@@ -14,7 +14,7 @@ import java.util.Map;
 public class PlayerTest {
   Player testPlayer = new Player("testPlayer");
 
-<<<<<<< HEAD
+
   @Test
   public void isNotBancrupt() {
     Assertions.assertFalse(testPlayer.isBankrupt());
@@ -24,15 +24,7 @@ public class PlayerTest {
   public void isNotInPrison() {
     Assertions.assertFalse(testPlayer.isInPrison());
   }
-=======
-    @Test
-    public void isNotBancrupt() {
-        Assertions.assertFalse(testPlayer.isBankrupt());
-    }
-    @Test
-    public void isNotInPrison() {
-        Assertions.assertFalse(testPlayer.isInPrison());
-    }
+
 
   /*  @Test
     public void testCreatePlayer1JSON(){
@@ -58,5 +50,4 @@ public class PlayerTest {
     }
     
    */
->>>>>>> c2780d6c940e677cdc2114e685bfd54989bc3e0e
 }

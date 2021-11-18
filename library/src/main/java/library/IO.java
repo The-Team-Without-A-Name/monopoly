@@ -7,11 +7,11 @@ import java.io.*;
 
 /** @author Madison May */
 
-public class GameStateIO {
+public class IO {
 
   private static final String saveLocation = "src/main/resources/gameState.json";
 
-  public GameStateIO() {
+  public IO() {
 
   }
 

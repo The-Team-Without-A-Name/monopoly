@@ -35,7 +35,7 @@ public class Space {
 
   @Getter @Setter
   protected Player owner;
-  
+
 
   // constructor
   public Space(String spaceName, int price, int rent, boolean owned, Player player) {

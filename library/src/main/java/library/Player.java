@@ -22,19 +22,20 @@ import java.util.Map;
  */
 public class Player {
 
+  @Getter
   private String playerName;
 
   @Getter @Setter
   private int playerBudget;
 
   @Getter @Setter
-  private boolean playerTurn = false;
+  private boolean playerTurn;
 
   @Getter @Setter
-  public boolean inPrison = false;
+  private boolean inPrison;
 
   @Getter @Setter
-  public boolean getOutOfJailFree = false;
+  private boolean getOutOfJailFree;
 
   /** I decided to use this built-in java library, Point,  to store the position. It is pretty simple, and I will have to
    * reconfigure the GameBoardController, but I think it will be helpful
@@ -55,6 +56,9 @@ public class Player {
     playerBudget = 1500; //Starting dollar amount for standard Monopoly game
     position = new Point(10, 10);
     properties = new ArrayList<>();
+    playerTurn = false;
+    inPrison = false;
+    getOutOfJailFree = false;
   }
 
 

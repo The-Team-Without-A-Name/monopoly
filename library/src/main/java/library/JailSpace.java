@@ -7,20 +7,20 @@ public class JailSpace {
   // paying a fee
 
   public void PlayerInJail(Player player) {
-    while (player.inPrison) {
-      if (player.getOutOfJailFree) {
-        player.inPrison = false;
-        player.getOutOfJailFree = false;
-      } else if (player.inPrison) {
+    while (player.isInPrison()) {
+      if (player.isGetOutOfJailFree()) {
+        player.setInPrison(false);
+        player.setGetOutOfJailFree(false);
+      } else if (player.isInPrison()) {
         int jailDice;
         jailDice = Dice.roll(player);
         if (jailDice >= 10) {
-          player.inPrison = false;
+          player.setInPrison(false);
           break;
         }
       } else {
         player.setPlayerBudget(player.getPlayerBudget() - 200);
-        player.inPrison = false;
+        player.setInPrison(false);
       }
     }
   }

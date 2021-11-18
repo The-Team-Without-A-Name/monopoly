@@ -13,7 +13,7 @@ public class IOTest {
     /** @author Madison May
      * Tests the read method in GameStateIO*/
     @Test
-    public void testGameStateWrite() {
+    public void testGameStateWriteIsNotNull() {
         GameState testGameState = new GameState();
 
         GameStateIO testIO = new GameStateIO();

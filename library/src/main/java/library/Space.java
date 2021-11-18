@@ -3,6 +3,8 @@ package library;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.BufferedWriter;
 import java.io.Reader;
@@ -19,19 +21,21 @@ import java.util.Map;
  */
 public class Space {
 
+  @Getter
   protected String spaceName;
+
+  @Getter
   protected int price;
+
+  @Getter
   protected int rent;
+
+  @Getter @Setter
   protected boolean owned;
+
+  @Getter @Setter
   protected Player owner;
-
-  /*   Not sure if we need these:
-  private int playerLocation;
-  private int landOn;
-
-   */
-  // default constructor
-  Space() {}
+  
 
   // constructor
   public Space(String spaceName, int price, int rent, boolean owned, Player player) {
@@ -43,45 +47,6 @@ public class Space {
     this.owner = player;
   }
 
-  public int getPrice() {
-    return price;
-  }
-
-  public void setPrice(int price) {
-    this.price = price;
-  }
-
-  public int getRent() {
-    return rent;
-  }
-
-  public void setRent(int rent) {
-    this.rent = rent;
-  }
-
-  public boolean isOwned() {
-    return owned;
-  }
-
-  public void setOwned(boolean owned) {
-    this.owned = owned;
-  }
-
-  public String getSpaceName() {
-    return spaceName;
-  }
-
-  public void setSpaceName(String spaceName) {
-    this.spaceName = spaceName;
-  }
-
-  public Player getOwner() {
-    return owner;
-  }
-
-  public void setOwner(Player owner) {
-    this.owner = owner;
-  }
 
   // JSON READER AND WRITER.
   private void CreateJson() {

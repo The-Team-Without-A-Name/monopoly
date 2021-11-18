@@ -19,7 +19,7 @@ public class JailSpace {
           break;
         }
       } else {
-        player.playerBudget = Player.playerBudget - 200;
+        player.setPlayerBudget(player.getPlayerBudget() - 200);
         player.inPrison = false;
       }
     }

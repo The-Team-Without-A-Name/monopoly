@@ -45,8 +45,7 @@ public class GameStateIO {
 
       FileReader fileReader = new FileReader(saveLocation);
 
-      GameState gameState =  gson.fromJson(fileReader, GameState.class);
-      return gameState;
+      return gson.fromJson(fileReader, GameState.class);
 
 
     } catch (FileNotFoundException e) {

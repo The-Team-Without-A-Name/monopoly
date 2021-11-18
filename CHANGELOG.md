@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+### Added
+-Images for Each Spaces
+
+-More Tests
+
+-Gson Processing 
+
+-Get and Post Sections
+
+-gitignore file added
+
+### Changed
+
+-Updated Json
+
+
+
+
 ## [2.0.0]
 
 ### Added
@@ -19,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -Login submission was converted to FXML
 
--Updated Dice CLass
+-Updated Dice Class
 
 -FXML implemented
 

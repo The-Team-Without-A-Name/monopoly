@@ -4,4 +4,8 @@ package library;
  *
  *
  */
-public class UtilitySpaces extends Space {}
+public class UtilitySpaces extends Space {
+    public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
+        super(spaceName, price, rent, owned, player);
+    }
+}

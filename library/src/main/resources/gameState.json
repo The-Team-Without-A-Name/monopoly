@@ -1,1 +1,26 @@
-{}
+{
+  "player1": {
+    "playerName": "p1",
+    "playerBudget": 1500,
+    "playerTurn": false,
+    "inPrison": false,
+    "getOutOfJailFree": false,
+    "position": {
+      "x": 10,
+      "y": 10
+    },
+    "properties": []
+  },
+  "player2": {
+    "playerName": "p2",
+    "playerBudget": 1500,
+    "playerTurn": false,
+    "inPrison": false,
+    "getOutOfJailFree": false,
+    "position": {
+      "x": 10,
+      "y": 10
+    },
+    "properties": []
+  }
+}

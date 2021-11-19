@@ -7,11 +7,11 @@ import java.io.*;
 
 /** @author Madison May */
 
-public class GameStateIO {
+public class IO {
 
   private static final String saveLocation = "src/main/resources/gameState.json";
 
-  public GameStateIO() {
+  public IO() {
 
   }
 
@@ -45,8 +45,7 @@ public class GameStateIO {
 
       FileReader fileReader = new FileReader(saveLocation);
 
-      GameState gameState =  gson.fromJson(fileReader, GameState.class);
-      return gameState;
+      return gson.fromJson(fileReader, GameState.class);
 
 
     } catch (FileNotFoundException e) {

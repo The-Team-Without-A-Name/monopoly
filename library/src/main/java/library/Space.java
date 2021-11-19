@@ -38,13 +38,13 @@ public class Space {
 
 
   // constructor
-  public Space(String spaceName, int price, int rent, boolean owned, Player player) {
+  public Space(String spaceName, int price, int rent, boolean owned) {
 
     this.spaceName = spaceName;
     this.price = price;
     this.rent = price;
     this.owned = owned;
-    this.owner = player;
+    this.owner = null;
   }
 
 

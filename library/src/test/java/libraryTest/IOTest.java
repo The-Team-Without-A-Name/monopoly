@@ -3,6 +3,7 @@ package libraryTest;
 import library.GameState;
 import library.IO;
 import library.Player;
+import library.Space;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +44,9 @@ public class IOTest {
         IO testIO = new IO();
         testIO.SaveGameStateToJson(testGameState);
         GameState newGameState = testIO.LoadGameStateFromJson();
+
+        Space testProperty = new Space("testSpace", 200, 20, false);
+        testP1.addProperty(testProperty);
 
         Player newP1 = newGameState.getPlayer1();
         Player newP2 = newGameState.getPlayer2();

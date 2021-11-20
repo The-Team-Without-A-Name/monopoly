@@ -5,7 +5,7 @@ package library;
  *
  */
 public class UtilitySpaces extends Space {
-    public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
-        super(spaceName, price, rent, owned, player);
+    public UtilitySpaces(String spaceName, int price, int rent, boolean owned) {
+        super(spaceName, price, rent, owned);
     }
 }

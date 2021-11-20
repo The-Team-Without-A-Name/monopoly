@@ -2,8 +2,8 @@ package library;
 
 public class RailRoadSpaces extends Space {
 
-  public RailRoadSpaces(String spaceName, int price, int rent, boolean owned, Player player) {
-    super(spaceName, price, rent, owned, player);
+  public RailRoadSpaces(String spaceName, int price, int rent, boolean owned) {
+    super(spaceName, price, rent, owned);
   }
 
   /** handles Rail Road Space */

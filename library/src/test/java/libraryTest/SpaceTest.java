@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 public class SpaceTest {
     Player henry =new Player("Henry");
 
-    Space space=new Space("P",100,10,false,henry);
+    Space space=new Space("P",100,10,false);
     Gson gson=new Gson();
 
     @Test

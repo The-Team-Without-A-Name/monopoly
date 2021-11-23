@@ -6,6 +6,8 @@ package library;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.IOException;
+
 /**
  *
  * This is where the game logic should be. Everyone threw that sort of thing in my GameBoardController because it was
@@ -29,14 +31,18 @@ public class Game {
 
   /** @author Madison May
    * Creates a new game and initializes players*/
+
   public Game() {
     player1 = new Player("P1");
     player2 = new Player("P2");
   }
 
+  /** @author Madison May
+   * This should be called in the SERVER. */
   public void update() {
     IO gameSaver = new IO();
     gameState = new GameState(player1, player2);
     gameSaver.SaveGameStateToJson(gameState);
+
   }
 }

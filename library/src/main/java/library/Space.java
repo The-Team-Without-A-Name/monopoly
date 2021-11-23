@@ -6,6 +6,8 @@ import com.google.gson.JsonParser;
 import lombok.Getter;
 import lombok.Setter;
 
+import library.Player;
+
 import java.io.BufferedWriter;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -30,15 +32,17 @@ public class Space {
   @Getter
   protected int rent;
 
-  @Getter @Setter
+  @Getter
+  @Setter
   protected boolean owned;
 
-  @Getter @Setter
+  @Getter
+  @Setter
   protected Player owner;
 
 
   // constructor
-  public Space(String spaceName, int price, int rent, boolean owned) {
+  public Space(String spaceName, int price, int rent, boolean owned, Player player) {
 
     this.spaceName = spaceName;
     this.price = price;
@@ -295,6 +299,60 @@ public class Space {
       reader.close();
     } catch (Exception ex) {
       ex.printStackTrace();
+    }
+  }
+/**
+ * Add section to handle go space(Gain 200 when passing go)
+ */
+
+
+  /**
+   * Class to Manage Utility spaces, They have special rent rules and include electric company and Water Works
+   */
+  public class UtilitySpaces extends Space {
+    public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
+      super(spaceName, price, rent, owned, player);
+    }
+  }
+
+
+/**
+ * handles income tax space and Luxury tax space Player must pay 200 or 10% of assets for income tax
+ * or pay 100 for luxury tax space upon landing.
+ */
+
+
+
+  /**
+   * handles Rail Road Space
+   */
+  public class RailRoadSpaces {
+
+    public RailRoadSpaces(String spaceName, int price, int rent, boolean owned, Player player) {
+
+    }
+
+
+    /**
+     * Add and refine gotojail functionality
+     */
+    public void PlayerInJail(Player player) {
+      while (player.isInPrison()) {
+        if (player.isGetOutOfJailFree()) {
+          player.setInPrison(false);
+          player.setGetOutOfJailFree(false);
+        } else if (player.isInPrison()) {
+          int jailDice;
+          jailDice = Dice.roll(player);
+          if (jailDice >= 10) {
+            player.setInPrison(false);
+            break;
+          }
+        } else {
+          player.setPlayerBudget(player.getPlayerBudget() - 200);
+          player.setInPrison(false);
+        }
+      }
     }
   }
 }

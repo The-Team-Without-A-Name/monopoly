@@ -5,11 +5,11 @@ import lombok.Getter;
 public class CardsHandler {
     private final int DECK_SIZE = 16; //16 cards in either type of deck
     private final Deck deck; //store deck of cards
-    
+
     @Getter
     private Card.CardType type;
 
-    public CardsHandler(String name, int pos, Card.CardType type, Deck deck) {
+    public CardsHandler(Card.CardType type, Deck deck) {
         this.deck = deck;
         if (type != Card.CardType.COMMUNITY && type != Card.CardType.CHANCE)
             throw new IllegalArgumentException("Card type invalid!");

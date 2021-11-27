@@ -1,54 +1,48 @@
 package library;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
-/**
- * This class has card drawing functionality
- * Need to make a fixed deck(16 cards) of each community and chance cards and
- * use these methods to initialize, and draw the card.
- */
+import lombok.Getter;
 
 public class CardsHandler {
-    private final ArrayList<Card> deck; //store array of cards
-    private int SIZE; //store number of cards
-    private int current;  //store current card
-    private boolean outOfJailFree;
+    private final int DECK_SIZE = 16; //16 cards in either type of deck
+    private final Deck deck; //store deck of cards
 
-    //create shuffled deck of cards
-    public CardsHandler() {
-        deck = new ArrayList<>();
-        outOfJailFree = true;
+    @Getter
+    private Card.CardType type;
+
+    public CardsHandler(Card.CardType type, Deck deck) {
+        this.deck = deck;
+        if (type != Card.CardType.COMMUNITY && type != Card.CardType.CHANCE)
+            throw new IllegalArgumentException("Card type invalid!");
+        if (type == Card.CardType.CHANCE)
+            chance();
+        else
+            community();
+
+        this.type = type;
     }
 
-    public void initializeCard(Card[] cards) {
-        if (!deck.isEmpty())
-            return;
-        SIZE = cards.length;
-        deck.addAll(Arrays.asList(cards));
-        Collections.shuffle(deck);
+    //create deck of community chest cards
+    private void community() {
+        Card[] cards = new Card[DECK_SIZE];
+
+        for (int i = 0; i < DECK_SIZE; i++)
+            cards[i] = new Card(Card.CardType.COMMUNITY, i);
+
+        deck.initializeCard(cards);
     }
 
-    //draw next card from deck
-    public Card drawCard() {
-        if (current == SIZE) {
-            Collections.shuffle(deck);
-            current = 0;
-        }
-        Card card = deck.get(current++);
-        if (card.outJailFree() && outOfJailFree)
-            outOfJailFree = false;
-        else if (card.outJailFree())
-            return drawCard(); //can't use out of jail free if in use
-        return card;
+    //create deck of chance cards
+    private void chance() {
+        Card[] cards = new Card[DECK_SIZE];
+
+        for (int i = 0; i < DECK_SIZE; i++)
+            cards[i] = new Card(Card.CardType.CHANCE, i);
+
+        deck.initializeCard(cards);
     }
 
-    public void returnOutOfJail() {
-        outOfJailFree = true;
-    }
-
-    public Iterable<Card> cards() {
-        return new ArrayList<>(deck);
+    //draw next card
+    public Card draw() {
+        return deck.drawCard();
     }
 }

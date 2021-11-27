@@ -3,6 +3,8 @@ package library;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Random;
+
 /**
  * Card class that contains information about community chest cards and chance cards
  */
@@ -30,6 +32,32 @@ public class Card {
 
     @Getter
     private int hotel;
+// select random val to change player budget
+    public static int CardValue(){
+        int[] cardVals = {200, -50, 50, 100, -100, -50, 25, 10, 100};
+        Random r = new Random();
+        int arrayVal = r.nextInt(cardVals.length);
+
+
+        return arrayVal;
+    }
+    //function to select random string to be displayed upon drawing card.
+    public static String ChanceString(int arrayVal){
+        String[] posstringCases = {"Congratulations! you won: ", "You won a competition! gain: " };
+        String[] negstringCases = {"Bad luck, you lose: ",  "Car accident, lose: " };
+        Random rString = new Random();
+        String stringCase="";
+
+        if (arrayVal >0){
+            int posString = rString.nextInt(posstringCases.length);
+            stringCase = (posstringCases[posString]);
+        }
+        else if(arrayVal <0){
+            int negString = rString.nextInt(negstringCases.length);
+            stringCase = (negstringCases[negString]);
+        }
+        return stringCase;
+    }
 
     public Card(CardType type, int value){
         if (!type.equals(CardType.CHANCE) && !type.equals(CardType.COMMUNITY))

@@ -6,8 +6,6 @@ import com.google.gson.JsonParser;
 import lombok.Getter;
 import lombok.Setter;
 
-import library.Player;
-
 import java.io.BufferedWriter;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -42,7 +40,7 @@ public class Space {
 
 
   // constructor
-  public Space(String spaceName, int price, int rent, boolean owned, Player player) {
+  public Space(String spaceName, int price, int rent, boolean owned) {
 
     this.spaceName = spaceName;
     this.price = price;
@@ -311,7 +309,7 @@ public class Space {
    */
   public class UtilitySpaces extends Space {
     public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
-      super(spaceName, price, rent, owned, player);
+      super(spaceName, price, rent, owned);
     }
   }
 

@@ -37,6 +37,8 @@ public class Player {
   @Getter @Setter
   private boolean getOutOfJailFree;
 
+  @Getter @Setter
+  private String playerID;
   /** I decided to use this built-in java library, Point,  to store the position. It is pretty simple, and I will have to
    * reconfigure the GameBoardController, but I think it will be helpful
    * */
@@ -59,6 +61,8 @@ public class Player {
     playerTurn = false;
     inPrison = false;
     getOutOfJailFree = false;
+
+
   }
 
 

@@ -10,7 +10,7 @@
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
-    <Button onAction="#onStartButtonClick" text="Start!" />
+    <Button text="Start!" />
 
     <Label layoutX="26.0" layoutY="173.0" text="Player 1:" />
     <Label layoutX="839.0" layoutY="173.0" text="Player 2:" />

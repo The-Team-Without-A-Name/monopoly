@@ -1,12 +1,11 @@
 package library;
 
-// import lombok.Getter;
-// import lombok.Setter;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  *
@@ -23,18 +22,21 @@ public class Game {
   @Getter @Setter
   private GameState gameState;
 
-  @Getter
+  private List<Player> players;
+
+  @Getter @Setter
   private Player player1;
 
-  @Getter
+  @Getter @Setter
   private Player player2;
 
   /** @author Madison May
    * Creates a new game and initializes players*/
 
-  public Game() {
-    player1 = new Player("P1");
-    player2 = new Player("P2");
+  public Game() {}
+
+  public void addPlayer(Player player) {
+    players.add(player);
   }
 
   /** @author Madison May

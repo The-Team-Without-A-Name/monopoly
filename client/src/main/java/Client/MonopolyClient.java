@@ -18,6 +18,7 @@ public class MonopolyClient extends Application {
     }
     public static final String CONNECTION_BOX_FXML = "connectionBox.fxml";
     public static final String GAMEBOARD_FXML = "GameBoard.fxml";
+    public static final String SPACE_MENU_FXML = "spaceMenu.fxml";
 
 
     Stage mainStage;
@@ -53,6 +54,8 @@ public class MonopolyClient extends Application {
         loader.setLocation(getClass().getResource(GAMEBOARD_FXML));
         Parent root = loader.load(); //this is where it is failing
         Scene scene = new Scene(root, 1000, 1000);
+        controller.InitializeGame();
+
         mainStage.setScene(scene);
 
 

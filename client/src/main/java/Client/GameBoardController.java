@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import library.Dice;
+import library.Game;
 import library.Player;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
@@ -27,8 +28,9 @@ import java.text.ParseException;
  */
 
 public class GameBoardController {
+    private static final String p1ID = "Monopoly-Player1-ID";
+    private static final String p2ID = "Monopoly-Player2-ID";
 
-    //The location for the images, that can potentially come from any set of images
     private final String resource = "src/main/resources/Client/";
 
     private final String classicThemeLocation = "classicMonopoly/";
@@ -39,8 +41,9 @@ public class GameBoardController {
     private final String frog = "src/main/resources/Client/" + classicThemeLocation + "/frog.jpg";
 
     private MonopolyClient app;
+    private Game game;
 
-    //FXML objects
+    /** FXML objects */
     @FXML
     private GridPane gameBoard;
 
@@ -48,7 +51,7 @@ public class GameBoardController {
     private ChoiceBox themeBox;
 
 
-    /*
+    /**
      Player 1's things
      */
     @FXML
@@ -61,7 +64,7 @@ public class GameBoardController {
     private Rectangle p1Piece;
 
 
-    /*
+    /**
      Player 2's things
      */
     @FXML
@@ -76,7 +79,7 @@ public class GameBoardController {
 
 
 
-    /*
+    /**
      * I'm sure there's a more efficient way to do this, but I do not know it. I am going to have to manually make a
      * Rectangle for each square that can be manipulated by this controller.
      */
@@ -166,14 +169,16 @@ public class GameBoardController {
     private Player player2;
     private Dice dice;
 
+    //I don't think we will actually store any Player objects in here. I am going to store the player information as an id specific to player 1 and player 2
+
+
     public GameBoardController(MonopolyClient app) throws FileNotFoundException {
         this.app = app;
 
     }
 
-    //FXML button methods
-    @FXML
-    protected void onStartButtonClick() throws FileNotFoundException {
+
+    protected void InitializeGame() throws FileNotFoundException {
 
         if (!gameBoard.getChildren().contains(p1Piece)) {
             gameBoard.add(p1Piece, 10, 10);
@@ -187,40 +192,32 @@ public class GameBoardController {
         }
         setTheme(resource + basicThemeLocation);
     }
+    protected void setPlayer() {
 
-    @FXML
-    protected void onMoveButtonClick() {
-        //player2.Create(player2);
-        //move for some input from server
-        //Move(4);
     }
 
 
+    //FXML button methods
     @FXML
     //need to add a way to accept a player object and call diceroll, then use the returned value from diceroll to update movement and print the #
     protected void onP1DiceButtonClick() throws InterruptedException {
 
-        //Need to send dice roll request to server
+
         int diceVal = dice.roll(player1);
         p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p1Piece);
 
-//        //update player position
-//        player1.setPlayerColumn(GridPane.getColumnIndex(p1Piece));
-//        player1.setPlayerRow(GridPane.getColumnIndex(p1Piece));
     }
 
     @FXML
     protected void onP2DiceButtonClick() throws InterruptedException {
 
-        //Need to send dice roll request to server
+
         int diceVal = dice.roll(player2);
         p2DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p2Piece);
 
-//        //update player position
-//        player2.setPlayerColumn(GridPane.getColumnIndex(p2Piece));
-//        player2.setPlayerRow(GridPane.getColumnIndex(p2Piece));
+
     }
     @FXML
     protected void onP1PropertyPurchase() throws InterruptedException, IOException, ParseException {
@@ -228,7 +225,6 @@ public class GameBoardController {
         JSONObject value;
         try (Reader in = new InputStreamReader(getClass().getResourceAsStream("/playerinfo.json"))) {
             JSONParser parser = new JSONParser();
-//            value = (JSONObject) parser.parse(in);
         }
 //        JSONObject player1obj = (JSONObject) value.get("player1");
 
@@ -322,9 +318,7 @@ public class GameBoardController {
         position[1] = column;
         return position;
     }
-//    protected void SetThemeBox() {
-//        themeBox.
-//    }
+
 
     protected boolean onTopRow(int column, int row) {
         return row == 0 && column != 10;
@@ -339,7 +333,5 @@ public class GameBoardController {
         return column == 10 && row != 10;
     }
 
-    private void initGameBoard() {
 
-    }
 }

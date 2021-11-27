@@ -19,7 +19,9 @@ public class ServerInit {
     private Javalin app;
 
     public ServerInit() {
-        Game game = new Game();
+
+        GameContent context = GameContent.getInstance();
+        Game game = context.getGame();
 
         QueuedThreadPool queuedThreadPool =
                 new QueuedThreadPool(200, 8, 60000);

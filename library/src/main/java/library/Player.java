@@ -62,6 +62,15 @@ public class Player {
   }
 
 
+  //Method to call cardvalue and chancestring methods and return string and update player budget.
+  public String CommunityChanceDraw(Player player){
+    int moneyAdjust = Card.CardValue();
+    String ccString = Card.ChanceString(moneyAdjust);
+    player.playerBudget += moneyAdjust;
+    return ccString;
+  }
+
+
 
   /** @author Madison May
    * Checks to see if the Player is bancrupt*/

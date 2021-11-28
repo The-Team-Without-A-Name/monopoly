@@ -2,11 +2,13 @@ package Client;
 
 import com.google.gson.Gson;
 import library.GameState;
+import library.Player;
 
 import javax.script.ScriptEngine;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
@@ -20,9 +22,12 @@ public class Connection {
 
     //PLACEHOLDER IDK WHY THESE WORK OR WHAT THE SYNTAX OR HTTP ON EACH DOES
     private static final String RESET_CALL = "http://%s:%s/api/reset";
-    private static final String STATE_CALL = "http://%s:%s/api/state";
+    private static final String STATE_CALL = "http://%s:%s/api/get-gamestate";
     private static final String UPDATE_CALL = "http://%s:%s/api/update";
     private static final String STATUS_CALL = "http://%s:%s/api/status";
+    private static final String ADD_PLAYER = "http://%s:%s/api/add-player";
+    private static final String NEW_PLAYER = "http://%s:%s/api/new-player";
+    private static final String NEW_GAME = "http://%s:%s/api/new-game";
 
     String address;
     String port;
@@ -60,6 +65,20 @@ public class Connection {
                 .build();
     }
 
+    public GameState NewGame() throws IOException, InterruptedException {
+        HttpRequest request = createGet(NEW_GAME);
+        return getGameState(request);
+    }
+
+    public void AddPlayer(Player player) {
+        HttpRequest request = createPost(ADD_PLAYER, player.getPlayerID());
+    }
+
+    public GameState GetGameState() throws IOException, InterruptedException {
+        HttpRequest request = createGet(STATE_CALL);
+        return getGameState(request);
+    }
+
     //sets values to null for disconnect
     public void disconnect() {
         address = null;
@@ -67,30 +86,6 @@ public class Connection {
         client = null;
     }
 
-    private HttpRequest makeGet(String apiCall){
-        return HttpRequest.newBuilder()
-                .uri(URI.create(String.format(apiCall, address, port)))
-                .timeout(Duration.ofSeconds(30))
-                .GET()
-                .build();
-    }
-
-    /**
-     * @author Madison May
-     * @return
-     */
-    public GameState sendUpdate(GameState gameState) throws IOException, InterruptedException {
-        Gson gson = new Gson();
-        String jsonGameState = gson.toJson(gameState);
-
-        HttpRequest request = createPost(UPDATE_CALL, jsonGameState);
-        return getGameState(request);
-    }
-
-    public GameState getCurrentState() throws IOException, InterruptedException {
-        HttpRequest httpRequest = createGet(STATE_CALL);
-        return getGameState(httpRequest);
-    }
 
     /**
      * This method may not be entirely necessary
@@ -133,7 +128,7 @@ public class Connection {
     }
 
     public boolean test() {
-        HttpRequest request = makeGet(STATUS_CALL);
+        HttpRequest request = createGet(STATUS_CALL);
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             return response.body().equals("OK");

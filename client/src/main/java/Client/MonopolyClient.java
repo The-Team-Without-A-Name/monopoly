@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import library.Player;
 
 import java.io.IOException;
 
@@ -18,11 +17,13 @@ public class MonopolyClient extends Application {
     }
     public static final String CONNECTION_BOX_FXML = "connectionBox.fxml";
     public static final String GAMEBOARD_FXML = "GameBoard.fxml";
+    public static final String GENERIC_MESSAGE_FXML = "genericMessage.fxml";
     public static final String SPACE_MENU_FXML = "spaceMenu.fxml";
 
 
     Stage mainStage;
     GameBoardController controller;
+    GenericMessageController messageController;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -34,6 +35,7 @@ public class MonopolyClient extends Application {
         showConnect();
 
         stage.show();
+
     }
 
 
@@ -52,15 +54,29 @@ public class MonopolyClient extends Application {
         controller = new GameBoardController(this);
         loader.setController(controller);
         loader.setLocation(getClass().getResource(GAMEBOARD_FXML));
-        Parent root = loader.load(); //this is where it is failing
+        Parent root = loader.load();
         Scene scene = new Scene(root, 1000, 1000);
         controller.InitializeGame();
+
 
         mainStage.setScene(scene);
 
 
        // controller.initState();
     }
+
+    public void showMessage(String title, String message) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        messageController = new GenericMessageController(this);
+        loader.setController(messageController);
+        loader.setLocation(getClass().getResource(GENERIC_MESSAGE_FXML));
+        Parent root = loader.load();
+        Scene scene = new Scene(root, 50, 50);
+        messageController.generateMessageWindow();
+
+        mainStage.setScene(scene);
+    }
+
 
     public void showWarningDialog(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);

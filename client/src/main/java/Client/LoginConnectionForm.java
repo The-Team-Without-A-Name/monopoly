@@ -44,6 +44,7 @@ public class LoginConnectionForm {
 
       if (connection.initialized && connection.test()) {
           try {
+
               app.showBoard();
           } catch (IOException ex) {
               app.showWarningDialog("Board Error","Cant load game board, try restarting the program");

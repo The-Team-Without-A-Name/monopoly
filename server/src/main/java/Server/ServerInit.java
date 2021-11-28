@@ -1,9 +1,6 @@
 package Server;
 
-import Server.handlers.addPlayerToGameHandler;
-import Server.handlers.getGameStateHandler;
-import Server.handlers.newGameHandler;
-import Server.handlers.newPlayerHandler;
+import Server.handlers.*;
 import io.javalin.Javalin;
 import library.Game;
 import org.eclipse.jetty.server.Server;
@@ -39,6 +36,7 @@ public class ServerInit {
             post("api/new-player", new newPlayerHandler(context));
             post("api/new-game", new newGameHandler(context));
             post("api/add-player", new addPlayerToGameHandler(context));
+            post("api/update-gamestate", new updateGameStateHandler(context));
             get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {
                 ctx.result("OK");

@@ -14,6 +14,8 @@ public class GameTest {
     @Test
     public void canAlterGamePlayers() {
         Game testGame = new Game();
+        testGame.setPlayer1(new Player("p1"));
+        testGame.setPlayer2(new Player("p2"));
         Player p1 = testGame.getPlayer1();
         Player p2 = testGame.getPlayer2();
 

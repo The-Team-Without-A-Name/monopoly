@@ -27,6 +27,9 @@ dependencies {
     //GSON
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
     //JSON
 //    implementation 'com.github.cliftonlabs:json-simple:3.1.0'
 

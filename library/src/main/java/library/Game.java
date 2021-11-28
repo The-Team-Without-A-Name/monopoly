@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Game {
   @Getter @Setter
   private GameState gameState;
 
+  @Getter @Setter
   private List<Player> players;
 
   @Getter @Setter
@@ -30,10 +33,15 @@ public class Game {
   @Getter @Setter
   private Player player2;
 
+  @Getter
+  private String gameID;
+
   /** @author Madison May
    * Creates a new game and initializes players*/
 
-  public Game() {}
+  public Game() {
+    gameID = UUID.randomUUID().toString();
+  }
 
   public void addPlayer(Player player) {
     players.add(player);
@@ -47,4 +55,6 @@ public class Game {
     gameSaver.SaveGameStateToJson(gameState);
 
   }
+
+
 }

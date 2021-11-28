@@ -4,7 +4,9 @@ import library.Game;
 import library.Player;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * @author Madison May
@@ -46,20 +48,27 @@ public class GameContent {
             game.addPlayer(findPlayer(playerID));
         }
     }
-    public void newPlayer(String playerName) {
+    public String newPlayer(String playerName) {
         if (game != null) {
             Player newPlayer = new Player(playerName);
-            Random random = new Random();
-            String newPlayerID = String.format("%04d", random.nextInt(10000));
+            String newPlayerID = UUID.randomUUID().toString();
             newPlayer.setPlayerID(newPlayerID);
             playerList.add(newPlayer);
-            addPlayerToGame(newPlayerID);
+            return newPlayerID;
         }
+        return "";
     }
     public void addPlayerToGame(String playerID) {
         if (game != null && playerID != null) {
             game.addPlayer(findPlayer(playerID));
         }
+    }
+
+    public Map<String, String> getGameState() {
+        if (game != null) {
+            return (Map<String, String>) game.getGameState();
+        }
+        return null;
     }
 
 

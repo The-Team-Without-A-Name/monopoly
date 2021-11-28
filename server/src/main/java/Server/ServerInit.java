@@ -1,5 +1,9 @@
 package Server;
 
+import Server.handlers.addPlayerToGameHandler;
+import Server.handlers.getGameStateHandler;
+import Server.handlers.newGameHandler;
+import Server.handlers.newPlayerHandler;
 import io.javalin.Javalin;
 import library.Game;
 import org.eclipse.jetty.server.Server;
@@ -32,13 +36,10 @@ public class ServerInit {
 
         app.get("/", ctx -> ctx.result("Server Launch Successful"));
         app.routes(() -> {
-            get("/api/state", ctx -> ctx.json(game.getGameState()));
-            post("/api/update", ctx -> {
-                game.update();
-                ctx.json(game.getGameState());
-            });
-
-
+            post("api/new-player", new newPlayerHandler(context));
+            post("api/new-game", new newGameHandler(context));
+            post("api/add-player", new addPlayerToGameHandler(context));
+            get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {
                 ctx.result("OK");
             });
@@ -48,7 +49,11 @@ public class ServerInit {
     public Javalin getApp() {return app;}
 
   public static void main(String[] args) {
-        new ServerInit().getApp().start(7000);
-    //
+        CLI.INST.init();
+        CLI.INST.parseArgs(args);
+        int portNumber = CLI.INST.getPortNumber();
+
+        new ServerInit().getApp().start(portNumber);
+
   }
 }

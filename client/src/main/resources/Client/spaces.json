@@ -1,0 +1,470 @@
+[
+  {
+    "spaceName": "Go",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 10
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Mediterranean Avenue",
+    "price": 60,
+    "rent": 2,
+    "owned": false,
+    "location": {
+      "x": 9,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Community Chest",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 8,
+      "y": 10
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Baltic Avenue",
+    "price": 20,
+    "rent": 2,
+    "owned": false,
+    "location": {
+      "x": 7,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Reading Railroad",
+    "price": 200,
+    "rent": 25,
+    "owned": false,
+    "location": {
+      "x": 5,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Oriental Avenue",
+    "price": 100,
+    "rent": 6,
+    "owned": false,
+    "location": {
+      "x": 4,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Chance Space",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 3,
+      "y": 10
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Vermont Avenue",
+    "price": 100,
+    "rent": 6,
+    "owned": false,
+    "location": {
+      "x": 2,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Connecticut Avenue",
+    "price": 120,
+    "rent": 8,
+    "owned": false,
+    "location": {
+      "x": 1,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Jail",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "St. Charles Place",
+    "price": 140,
+    "rent": 10,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 9
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Electric Company",
+    "price": 150,
+    "rent": 70,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 8
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "States Avenue",
+    "price": 140,
+    "rent": 10,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 7
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Virginia Avenue",
+    "price": 140,
+    "rent": 12,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 6
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Pennsylvania Railroad",
+    "price": 200,
+    "rent": 25,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 5
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "St. James Place",
+    "price": 180,
+    "rent": 14,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 4
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Community Chest",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 3
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Tennessee Avenue",
+    "price": 180,
+    "rent": 14,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 2
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "New York Avenue",
+    "price": 200,
+    "rent": 18,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 1
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Free Parking!",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 0,
+      "y": 0
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Kentucky Avenue",
+    "price": 220,
+    "rent": 18,
+    "owned": false,
+    "location": {
+      "x": 1,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Chance Space",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 2,
+      "y": 0
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Indiana Avenue",
+    "price": 220,
+    "rent": 18,
+    "owned": false,
+    "location": {
+      "x": 3,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Illinois Avenue",
+    "price": 240,
+    "rent": 20,
+    "owned": false,
+    "location": {
+      "x": 4,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "B and O Railroad",
+    "price": 200,
+    "rent": 25,
+    "owned": false,
+    "location": {
+      "x": 5,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Atlantic Avenue",
+    "price": 260,
+    "rent": 22,
+    "owned": false,
+    "location": {
+      "x": 6,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Ventnor Avenue",
+    "price": 260,
+    "rent": 22,
+    "owned": false,
+    "location": {
+      "x": 7,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Water Works",
+    "price": 150,
+    "rent": 25,
+    "owned": false,
+    "location": {
+      "x": 8,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Marvin Gardens",
+    "price": 280,
+    "rent": 24,
+    "owned": false,
+    "location": {
+      "x": 9,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Go to Jail",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 0
+    },
+    "drawsCard": false,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Pacific Avenue",
+    "price": 300,
+    "rent": 26,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 1
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "North Carolina Avenue",
+    "price": 200,
+    "rent": 26,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 2
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Community Chest",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 3
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Pennsylvania Avenue",
+    "price": 320,
+    "rent": 28,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 4
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Short Line",
+    "price": 200,
+    "rent": 25,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 5
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "A Chance Space",
+    "price": 0,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 6
+    },
+    "drawsCard": true,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Park Place",
+    "price": 200,
+    "rent": 35,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 7
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  },
+  {
+    "spaceName": "Luxury Tax",
+    "price": 100,
+    "rent": 0,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 8
+    },
+    "drawsCard": false,
+    "canBePurchased": false
+  },
+  {
+    "spaceName": "Boardwalk",
+    "price": 400,
+    "rent": 50,
+    "owned": false,
+    "location": {
+      "x": 10,
+      "y": 9
+    },
+    "drawsCard": false,
+    "canBePurchased": true
+  }
+]

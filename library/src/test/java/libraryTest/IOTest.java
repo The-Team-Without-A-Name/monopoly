@@ -45,7 +45,7 @@ public class IOTest {
         testIO.SaveGameStateToJson(testGameState);
         GameState newGameState = testIO.LoadGameStateFromJson();
 
-        Space testProperty = new Space("testSpace", 200, 20, false);
+        Space testProperty = new Space("testSpace", 200, 20, false, 0, 0);
         testP1.addProperty(testProperty);
 
         Player newP1 = newGameState.getPlayer1();

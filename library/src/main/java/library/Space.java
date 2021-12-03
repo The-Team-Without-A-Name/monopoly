@@ -1,15 +1,21 @@
 package library;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import lombok.Getter;
 import lombok.Setter;
+import org.eclipse.jetty.util.ajax.JSON;
 
+import java.awt.*;
 import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,24 +36,101 @@ public class Space {
   @Getter
   protected int rent;
 
-  @Getter
-  @Setter
+  @Getter @Setter
   protected boolean owned;
 
-  @Getter
-  @Setter
+  @Getter @Setter
   protected Player owner;
+
+  @Getter @Setter
+  private Point location;
+
+  @Getter @Setter
+  private boolean drawsCard;
+
+  @Getter @Setter
+  private boolean canBePurchased;
 
 
   // constructor
-  public Space(String spaceName, int price, int rent, boolean owned) {
+  public Space(String spaceName, int price, int rent, boolean drawsCard, int row, int column) {
 
     this.spaceName = spaceName;
     this.price = price;
-    this.rent = price;
-    this.owned = owned;
+    this.rent = rent;
     this.owner = null;
+    this.drawsCard = drawsCard;
+    this.location = new Point(column, row);
+    this.canBePurchased = price != 0;
   }
+
+
+  //Temporary main method to fill a spaces.json folder w/ some spaces
+//  public static void main(String[] args) throws IOException {
+//    Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();
+//
+//    String file = "spaces.json";
+//
+//    Space GO = new Space("Go", 0, 0, true, 10, 10);
+//    Space MEDAVE = new Space("Mediterranean Avenue", 60, 2, false, 10, 9);
+//    Space COMMUNITYCHEST1 = new Space("A Community Chest", 0, 0, true, 10, 8);
+//    Space BALAVE = new Space("Baltic Avenue", 20, 2, false, 10, 7);
+//    Space INCOMETAX = new Space("Income Tax", 0, 200, false, 10, 6);
+//    Space READINGRAILROAD = new Space("Reading Railroad", 200, 25, false, 10, 5);
+//    Space ORIAVE = new Space("Oriental Avenue", 100, 6, false, 10, 4);
+//    Space CHANCE1 = new Space("A Chance Space", 0, 0, true, 10, 3);
+//    Space VERAVE = new Space("Vermont Avenue", 100, 6, false, 10, 2);
+//    Space CONAVE = new Space("Connecticut Avenue", 120, 8, false, 10, 1);
+//    Space JAIL = new Space("Jail", 0, 0,  false, 10, 0);
+//    Space STCHAPLA = new Space("St. Charles Place", 140, 10, false, 9, 0);
+//    Space ElECTRICOMPANY = new Space("Electric Company", 150, 70, false, 8, 0);
+//    Space STAVE = new Space("States Avenue", 140, 10, false, 7, 0);
+//    Space VIRAVE = new Space("Virginia Avenue", 140, 12, false, 6, 0);
+//    Space PENNRAIL = new Space("Pennsylvania Railroad", 200, 25, false, 5, 0);
+//    Space stjame = new Space("St. James Place", 180, 14, false, 4, 0);
+//    Space COMMCHEST2 = new Space("A Community Chest", 0, 0, true, 3, 0);
+//
+//    Space tennave = new Space("Tennessee Avenue", 180, 14, false, 2, 0);
+//    Space newave = new Space("New York Avenue", 200, 18, false, 1, 0);
+//    Space freeparking = new Space("Free Parking!", 0, 0, true, 0, 0);
+//    Space kenave = new Space("Kentucky Avenue", 220, 18, false, 0, 1);
+//    Space chance2 = new Space("A Chance Space", 0, 0, true, 0, 2);
+//    Space indave = new Space("Indiana Avenue", 220, 18, false, 0, 3);
+//    Space ilave = new Space("Illinois Avenue", 240, 20, false, 0, 4);
+//    Space borail = new Space("B&O Railroad", 200, 25, false, 0, 5);
+//    Space atlave = new Space("Atlantic Avenue", 260, 22, false, 0, 6);
+//    Space venave = new Space("Ventnor Avenue", 260, 22, false, 0, 7);
+//    Space waterworks = new Space("Water Works", 150, 25, false, 0, 8);
+//    Space margard = new Space("Marvin Gardens", 280, 24, false, 0, 9);
+//    Space gotojail = new Space("Jail", 0, 0, false, 0, 10);
+//    Space pacave = new Space("Pacific Avenue", 300, 26, false, 1, 10);
+//    Space norave = new Space("North Carolina Avenue", 200, 26, false, 2, 10);
+//    Space Comchest3 = new Space("A Community Chest", 0, 0, true, 3, 10);
+//    Space penave = new Space("Pennsylvania Avenue", 320, 28, false, 4, 10);
+//    Space shortline = new Space("Short Line", 200, 25, false, 5, 10);
+//    Space chance3 = new Space("A Chance Space", 0, 0, true, 6, 10);
+//    Space parkp = new Space("Park Place", 200, 35, false, 7, 10);
+//    Space luxurytax = new Space("Luxury Tax", 100, 0, false, 8, 10);
+//    Space boardwalk = new Space("Boardwalk", 400, 50, false, 9, 10);
+//
+//    luxurytax.canBePurchased = false;
+//    INCOMETAX.canBePurchased = false;
+//
+//
+//
+//
+//
+//    Space[] array = {GO, MEDAVE, COMMUNITYCHEST1, BALAVE, READINGRAILROAD, ORIAVE, CHANCE1, VERAVE, CONAVE, JAIL, STCHAPLA, ElECTRICOMPANY,
+//    STAVE, VIRAVE, PENNRAIL, stjame, COMMCHEST2, tennave, newave, freeparking, kenave, chance2, indave, ilave, borail, atlave, venave,
+//    waterworks, margard, gotojail, pacave, norave, Comchest3, penave, shortline, chance3, parkp, luxurytax, boardwalk};
+//
+//    String json = gsonBuilder.toJson(array);
+//
+//    FileWriter writer = new FileWriter(file);
+//    writer.write(json);
+//    writer.close();
+//
+//  }
 
 
   // JSON READER AND WRITER.
@@ -307,11 +390,11 @@ public class Space {
   /**
    * Class to Manage Utility spaces, They have special rent rules and include electric company and Water Works
    */
-  public class UtilitySpaces extends Space {
-    public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
-      super(spaceName, price, rent, owned);
-    }
-  }
+//  public class UtilitySpaces extends Space {
+//    public UtilitySpaces(String spaceName, int price, int rent, boolean owned, Player player) {
+//      super(spaceName, price, rent);
+//    }
+//  }
 
 
 /**

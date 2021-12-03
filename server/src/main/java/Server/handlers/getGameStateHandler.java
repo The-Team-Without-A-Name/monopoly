@@ -13,6 +13,8 @@ public class getGameStateHandler extends BasicHandler{
 
     private String gameID;
 
+
+
     @Override
     public void processData(Map<String, String> data) {
         gameID = data.get("gameID");
@@ -20,7 +22,7 @@ public class getGameStateHandler extends BasicHandler{
 
     @Override
     public Object getMessage() {
-        return content.getGameState();
+        return GameContent.getGameState();
     }
 
     @Override

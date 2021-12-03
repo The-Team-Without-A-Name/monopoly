@@ -5,7 +5,7 @@ import io.javalin.Javalin;
 import library.Game;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-
+import library.Player;
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
 
@@ -16,6 +16,10 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 
 
 public class ServerInit {
+
+
+    Player player1 = new Player("p1");
+    Player player2 = new Player("p2");
 
     private Javalin app;
 
@@ -37,7 +41,9 @@ public class ServerInit {
             post("api/new-game", new newGameHandler(context));
             post("api/add-player", new addPlayerToGameHandler(context));
             post("api/update-gamestate", new updateGameStateHandler(context));
-            get("api/get-gamestate", new getGameStateHandler(context));
+            get("api/get-gamestate", updateGameStateHandler.updateGameStates(player1, player2));
+
+           // get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {
                 ctx.result("OK");
             });

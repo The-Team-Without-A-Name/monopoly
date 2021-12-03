@@ -4,6 +4,7 @@ import Server.GameContent;
 import com.google.gson.Gson;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.Objects;
@@ -11,25 +12,27 @@ import java.util.Objects;
 /**
  * @author Madison May
  * An interface for the basic server handlers
- * I used some basic structure in Isaac Griffith's tic-tac-toe project because my group said they would do the server, and they didn't.
+ * I used some basic structure in Isaac Griffith's tic-tac-toe project.
  */
 
 public abstract class BasicHandler implements Handler {
     protected GameContent content;
 
-    public BasicHandler(GameContent content) {this.content = content;}
+    public BasicHandler(GameContent content) {
+        this.content = content;
+    }
 
     @Override
-    public void handle(Context context) throws Exception {
-        if (Objects.equals(context.contentType(), "application/json")) {
+    public void handle(@NotNull Context ctx) throws Exception {
+        if (Objects.equals(ctx.contentType(), "application/json")) {
             Gson gson = new Gson();
-            Map<String, String> contextData = context.bodyAsClass(Map.class);
+            Map<String, String> contextData = ctx.bodyAsClass(Map.class);
 
             processData(contextData);
 
-            context.json(getMessage());
+            ctx.json(getMessage());
         } else {
-            context.json(getErrorMessage());
+            ctx.json(getErrorMessage());
         }
     }
 

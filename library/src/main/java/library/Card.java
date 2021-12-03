@@ -38,8 +38,7 @@ public class Card {
         Random r = new Random();
         int arrayVal = r.nextInt(cardVals.length);
 
-
-        return arrayVal;
+        return cardVals[arrayVal];
     }
     //function to select random string to be displayed upon drawing card.
     public static String ChanceString(int arrayVal){

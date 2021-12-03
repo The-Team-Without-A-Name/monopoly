@@ -8,15 +8,13 @@ import org.junit.jupiter.api.Assertions;
 class DiceTest {
 
 
-
-
-
-
+    // making a dice object
     Dice dice =new Dice();
 
+
+    // testing dice roll method
     @Test
     public void testroll(){
-        Dice dice =new Dice();
         int F1 = dice.getFaceValue1();
         int F2 = dice.getFaceValue2();
         int calculatedSum= F1+F2;

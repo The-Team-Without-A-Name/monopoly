@@ -1,5 +1,6 @@
 package Client;
 
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -13,12 +14,13 @@ import javafx.scene.shape.Rectangle;
 import library.Dice;
 import library.Game;
 import library.Player;
+import library.Space;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 import java.io.*;
 import java.text.ParseException;
-
+import java.util.Objects;
 
 
 /**
@@ -35,13 +37,16 @@ public class GameBoardController {
 
     private final String classicThemeLocation = "classicMonopoly/";
     private final String basicThemeLocation = "basicMonopoly/";
+    private final String spaceLocation = resource + "spaces.json";
 
 
     //This image was used for testing purpose. May be used later because it was beautiful.
     private final String frog = "src/main/resources/Client/" + classicThemeLocation + "/frog.jpg";
 
+    private Space[] spaceArray;
     private MonopolyClient app;
     private Game game;
+    private Connection connection;
 
     /** FXML objects */
     @FXML
@@ -174,12 +179,13 @@ public class GameBoardController {
 
     public GameBoardController(MonopolyClient app) throws FileNotFoundException {
         this.app = app;
-
     }
 
 
     protected void InitializeGame() throws FileNotFoundException {
 
+        Game game = new Game();
+        //TODO: update game state here
         if (!gameBoard.getChildren().contains(p1Piece)) {
             gameBoard.add(p1Piece, 10, 10);
             gameBoard.add(p2Piece, 10, 10);
@@ -191,9 +197,10 @@ public class GameBoardController {
 
         }
         setTheme(resource + basicThemeLocation);
-    }
-    protected void setPlayer() {
-
+        spaceArray = loadSpaces();
+        //TODO: make this come from the server if Rowan ever gets it done
+        player1 = new Player("P1");
+        app.showWarningDialog("Welcome to the game.",  String.format("You are player %s", player1.getPlayerName()));
     }
 
 
@@ -203,27 +210,21 @@ public class GameBoardController {
     protected void onP1DiceButtonClick() throws InterruptedException {
 
 
-        int diceVal = dice.roll(player1);
+        int diceVal = Dice.roll(player1);
         p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p1Piece);
+        app.showWarningDialog("WOW", "You have landed on: ");
+
+        //TODO: update gamestate here
 
     }
 
-    @FXML
-    protected void onP2DiceButtonClick() throws InterruptedException {
 
-
-        int diceVal = dice.roll(player2);
-        p2DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
-        Move(diceVal, p2Piece);
-
-
-    }
     @FXML
     protected void onP1PropertyPurchase() throws InterruptedException, IOException, ParseException {
 
         JSONObject value;
-        try (Reader in = new InputStreamReader(getClass().getResourceAsStream("/playerinfo.json"))) {
+        try (Reader in = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/playerinfo.json")))) {
             JSONParser parser = new JSONParser();
         }
 //        JSONObject player1obj = (JSONObject) value.get("player1");
@@ -243,6 +244,17 @@ public class GameBoardController {
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints
      * to set up a theme-choose when you launch the game.
      */
+
+    /**
+     * @author Madison May
+     * @return an array of Space objects, every Space in
+     * @throws FileNotFoundException if it can't find spaces.java in the resources folder
+     */
+    private Space[] loadSpaces() throws FileNotFoundException {
+        Gson gson = new Gson();
+        FileReader reader = new FileReader(spaceLocation);
+        return gson.fromJson(reader, Space[].class);
+    }
     @FXML
     protected void setTheme(String themeFolder) throws FileNotFoundException {
         Go.setFill(getImageFill(themeFolder + "Go.png"));

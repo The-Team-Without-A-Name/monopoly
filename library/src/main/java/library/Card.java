@@ -6,6 +6,7 @@ import lombok.Setter;
 import java.util.Random;
 
 /**
+ * @author Rowan, Pawan
  * Card class that contains information about community chest cards and chance cards
  */
 public class Card {

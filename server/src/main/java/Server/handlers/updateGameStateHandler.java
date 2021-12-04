@@ -29,12 +29,12 @@ public class updateGameStateHandler extends BasicHandler{
 
 
         BufferedWriter writer = Files.newBufferedWriter(Paths.get("Gamestate.json"));
-        int playerID = player.getPlayerID();
+        //int playerID = player.getPlayerID();
         Map<String, Object> Gamestate = new HashMap<>();
 
 
         //if(playerID == 1) {
-            //Map<String, Object> Gamestate = new HashMap<>();
+//Map<String, Object> Gamestate = new HashMap<>();
         try {
             Gamestate.put("p1Budget", player.getPlayerBudget());
             Gamestate.put("p1Position", player.getPosition());

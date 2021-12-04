@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * @author Rowan
  * This is a class for handling players in Monopoly game For now, this class contains only the
  * general methods and instances. create json for player location, money, propertiesowned, etc so
  * gamestate can be updated.

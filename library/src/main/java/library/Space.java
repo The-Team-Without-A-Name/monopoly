@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * @author Rowan
  * Space class sets up the difference spaces on the board. Properties of the spaces are defined
  * (name, owned/not owned, price, and rent price).
  *

@@ -58,7 +58,7 @@ public class GameContent {
         }
         return "";
     }
-    public void addPlayerToGame(String playerID) {
+    public static void addPlayerToGame(String playerID) {
         if (game != null && playerID != null) {
             game.addPlayer(findPlayer(playerID));
         }

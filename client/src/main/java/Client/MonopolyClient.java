@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import library.Space;
 
 import java.io.IOException;
 
@@ -22,15 +23,19 @@ public class MonopolyClient extends Application {
 
 
     Stage mainStage;
+    Stage secondaryStage;
     GameBoardController controller;
     GenericMessageController messageController;
+    SpaceMenuController spaceMenuController;
 
     @Override
     public void start(Stage stage) throws Exception {
        // IconFontFX.register(FontAwesome.getIconFont());
 
         this.mainStage = stage;
+        secondaryStage = new Stage();
         stage.setTitle("Monopoly");
+        secondaryStage.setTitle("Property Menu");
 
         showConnect();
 
@@ -67,12 +72,25 @@ public class MonopolyClient extends Application {
 
     public void showMessage(String title, String message) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        messageController = new GenericMessageController(this);
+        messageController = new GenericMessageController(controller,this, title, message);
         loader.setController(messageController);
         loader.setLocation(getClass().getResource(GENERIC_MESSAGE_FXML));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 50, 50);
-        messageController.generateMessageWindow();
+        Scene scene = new Scene(root, 500, 200);
+        messageController.setUpWindow();
+
+        secondaryStage.setScene(scene);
+        secondaryStage.showAndWait();
+
+    }
+
+    public void showSpace(Space space) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        spaceMenuController = new SpaceMenuController();
+        loader.setController(spaceMenuController);
+        loader.setLocation(getClass().getResource(SPACE_MENU_FXML));
+        Parent root = loader.load();
+        Scene scene = new Scene(root, 500, 300);
 
         mainStage.setScene(scene);
     }

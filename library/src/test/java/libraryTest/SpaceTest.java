@@ -17,6 +17,9 @@ import java.util.Map;
 public class SpaceTest {
     Player henry = new Player("Henry");
 
+    Space space=new Space("P",100,10, false, 0,0);
+    Gson gson=new Gson();
+
 
 
 

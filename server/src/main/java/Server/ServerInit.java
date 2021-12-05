@@ -48,19 +48,7 @@ public class ServerInit {
 
             get("api/get-gamestate", GamestateController::getGamestate);
 
-           // try {
-            //    post("api/update-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
-           // } catch (IOException e) {
-              //  e.printStackTrace();
-            //}
 
-            // try {
-            //    get("api/get-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
-           // } catch (IOException e) {
-             //   e.printStackTrace();
-           // }
-
-            // get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {
                 ctx.result("OK");
             });

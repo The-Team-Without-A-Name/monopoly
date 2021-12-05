@@ -58,11 +58,11 @@ public class GameContent {
         }
         return "";
     }
-    public static void addPlayerToGame(String playerID) {
-        if (game != null && playerID != null) {
-            game.addPlayer(findPlayer(playerID));
-        }
-    }
+   // public static void addPlayerToGame(String playerID) {
+   //     if (game != null && playerID != null) {
+   //         game.addPlayer(findPlayer(playerID));
+    //    }
+   // }
 
     public Map<String, String> getGameState() {
         if (game != null) {

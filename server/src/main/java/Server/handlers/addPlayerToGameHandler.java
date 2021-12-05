@@ -18,12 +18,12 @@ public class addPlayerToGameHandler extends BasicHandler{
         gameID = data.get("gameID");
         String playerID = data.get("playerID");
 
-        GameContent.addPlayerToGame(playerID);
+        //GameContent.addPlayerToGame(playerID);
     }
 
     @Override
     public Object getMessage() {
-        return GameContent.getGame();
+        return 0;//GameContent.getGame();
     }
 
     @Override

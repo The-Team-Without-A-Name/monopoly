@@ -36,6 +36,18 @@
     "canBePurchased": false
   },
   {
+    "spaceName": "Income Tax",
+    "price": 0,
+    "rent": 200,
+    "owned": false,
+    "location": {
+      "x": 6,
+      "y": 10
+    },
+    "drawsCard": false,
+    "canBePurchased": false
+  },
+  {
     "spaceName": "Baltic Avenue",
     "price": 20,
     "rent": 2,
@@ -288,7 +300,7 @@
     "canBePurchased": true
   },
   {
-    "spaceName": "B and O Railroad",
+    "spaceName": "B\u0026O Railroad",
     "price": 200,
     "rent": 25,
     "owned": false,
@@ -348,7 +360,7 @@
     "canBePurchased": true
   },
   {
-    "spaceName": "Go to Jail",
+    "spaceName": "Jail",
     "price": 0,
     "rent": 0,
     "owned": false,

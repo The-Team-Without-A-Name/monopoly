@@ -66,7 +66,7 @@ public class Space {
   }
 
 
-  //Temporary main method to fill a spaces.json folder w/ some spaces
+//  Temporary main method to fill a spaces.json folder w/ some spaces
 //  public static void main(String[] args) throws IOException {
 //    Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();
 //
@@ -121,7 +121,7 @@ public class Space {
 //
 //
 //
-//    Space[] array = {GO, MEDAVE, COMMUNITYCHEST1, BALAVE, READINGRAILROAD, ORIAVE, CHANCE1, VERAVE, CONAVE, JAIL, STCHAPLA, ElECTRICOMPANY,
+//    Space[] array = {GO, MEDAVE, COMMUNITYCHEST1, INCOMETAX, BALAVE, READINGRAILROAD, ORIAVE, CHANCE1, VERAVE, CONAVE, JAIL, STCHAPLA, ElECTRICOMPANY,
 //    STAVE, VIRAVE, PENNRAIL, stjame, COMMCHEST2, tennave, newave, freeparking, kenave, chance2, indave, ilave, borail, atlave, venave,
 //    waterworks, margard, gotojail, pacave, norave, Comchest3, penave, shortline, chance3, parkp, luxurytax, boardwalk};
 //

@@ -18,6 +18,7 @@ import library.Space;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
+import java.awt.*;
 import java.io.*;
 import java.text.ParseException;
 import java.util.Objects;
@@ -206,40 +207,55 @@ public class GameBoardController {
 
     //FXML button methods
     @FXML
-    //need to add a way to accept a player object and call diceroll, then use the returned value from diceroll to update movement and print the #
-    protected void onP1DiceButtonClick() throws InterruptedException {
+    protected void onP1DiceButtonClick() throws InterruptedException, IOException {
 
 
         int diceVal = Dice.roll(player1);
         p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
         Move(diceVal, p1Piece);
-        app.showWarningDialog("WOW", "You have landed on: ");
+        Space landedOn = getSpace();
+        if(landedOn.isCanBePurchased()) {
+            boolean choice = app.showMessage(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+            if (choice) {
+                if (player1.getPlayerBudget() >= landedOn.getPrice() && landedOn.isCanBePurchased()) {
+                    buyProperty(landedOn);
+
+                }
+                else if (player1.getPlayerBudget() < landedOn.getPrice()) {
+                    app.showWarningDialog("Not Allowed", "You cannot purchase this property because you do not have the proper funds.");
+                }
+            }
+
+        } else if (!landedOn.isCanBePurchased() && landedOn.isOwned()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "This space is owned! \n You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                    "You must pay $%d to the player that owns this property.".formatted(landedOn.getRent()));
+            if (player1.getPlayerBudget() > landedOn.getRent()) {
+                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+            } else {
+                player1.setPlayerBudget(0);
+            }
+        } else if (!landedOn.isCanBePurchased() && !landedOn.isOwned()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                    "You must pay $%d.".formatted(landedOn.getRent()));
+            if (player1.getPlayerBudget() > landedOn.getRent()) {
+                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+            } else {
+                player1.setPlayerBudget(0);
+            }
+        } else if (landedOn.isDrawsCard()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+            //TODO: app.showcard()
+        }
+
+        else {
+            app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+        }
 
         //TODO: update gamestate here
 
     }
 
 
-    @FXML
-    protected void onP1PropertyPurchase() throws InterruptedException, IOException, ParseException {
-
-        JSONObject value;
-        try (Reader in = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/playerinfo.json")))) {
-            JSONParser parser = new JSONParser();
-        }
-//        JSONObject player1obj = (JSONObject) value.get("player1");
-
-        // update properties
-//        String propertyname = player1.getPosition();
-//        player1obj.put("Properties", propertyname);
-        // need to update budget as well as assign that property a true isOwned bool
-
-        // write to playerinfo file
-        try (Writer out = new FileWriter("playerinfo.json")) {
-//            out.write(value.toJSONString());
-        }
-
-    }
     /*
      * This method is meant to set the theme to classic Monopoly and make it possible for later sprints
      * to set up a theme-choose when you launch the game.
@@ -322,13 +338,40 @@ public class GameBoardController {
             }
         }
     }
-    public int[] getPlayer1Position() {
+        protected Space getSpace(){
+        for(Space space : spaceArray) {
+            if(space.getLocation().y == getPlayer1Position().y && space.getLocation().x == getPlayer1Position().x) {
+                return space;
+            }
+        }
+        return new Space("AAAH", 0, 0, false, 0, 0);
+    }
+
+    protected int getIndexOfSpace(Space spaceToNDX){
+        int loc = 0;
+        for(Space space : spaceArray) {
+            if(Objects.equals(space.getSpaceName(), spaceToNDX.getSpaceName())) {
+                return loc;
+            }
+            loc ++;
+        }
+        return -1;
+    }
+    public void buyProperty(Space space) {
+        if(player1.getPlayerBudget() < space.getPrice() && !space.isOwned()) {
+            space.setCanBePurchased(false);
+            space.setOwned(true);
+            space.setOwner(player1);
+            player1.addProperty(space);
+            spaceArray[getIndexOfSpace(space)] = space;
+        } else {
+            app.showWarningDialog("Nope!", "You cannot buy this property!");
+        }
+    }
+    protected Point getPlayer1Position() {
         int row = GridPane.getRowIndex(p1Piece);
         int column = GridPane.getColumnIndex(p1Piece);
-        int[] position = new int[2];
-        position[0] = row;
-        position[1] = column;
-        return position;
+        return new Point(column, row);
     }
 
 

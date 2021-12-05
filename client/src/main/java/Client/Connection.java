@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import library.GameState;
 import library.Player;
 import lombok.Getter;
-
 import javax.script.ScriptEngine;
 import java.io.IOException;
 import java.net.URI;

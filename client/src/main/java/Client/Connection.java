@@ -3,6 +3,7 @@ package Client;
 import com.google.gson.Gson;
 import library.GameState;
 import library.Player;
+import lombok.Getter;
 
 import javax.script.ScriptEngine;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class Connection {
     String address;
     String port;
     boolean initialized = false;
+
     HttpClient client;
 
     //Private Default Constructor

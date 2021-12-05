@@ -34,6 +34,8 @@ dependencies {
 //    implementation 'com.github.cliftonlabs:json-simple:3.1.0'
 
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+    implementation 'com.konghq:unirest-java:3.11.09:standalone'
 }
 
 test {

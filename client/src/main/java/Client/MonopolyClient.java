@@ -70,7 +70,7 @@ public class MonopolyClient extends Application {
        // controller.initState();
     }
 
-    public void showMessage(String title, String message) throws IOException {
+    public boolean showMessage(String title, String message) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         messageController = new GenericMessageController(controller,this, title, message);
         loader.setController(messageController);
@@ -81,6 +81,8 @@ public class MonopolyClient extends Application {
 
         secondaryStage.setScene(scene);
         secondaryStage.showAndWait();
+
+        return messageController.getResult();
 
     }
 

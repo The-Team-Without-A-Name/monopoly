@@ -215,8 +215,39 @@ public class GameBoardController {
         Move(diceVal, p1Piece);
         Space landedOn = getSpace();
         if(landedOn.isCanBePurchased()) {
-            app.showMessage(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
-        } else {
+            boolean choice = app.showMessage(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+            if (choice) {
+                if (player1.getPlayerBudget() >= landedOn.getPrice() && landedOn.isCanBePurchased()) {
+                    buyProperty(landedOn);
+
+                }
+                else if (player1.getPlayerBudget() < landedOn.getPrice()) {
+                    app.showWarningDialog("Not Allowed", "You cannot purchase this property because you do not have the proper funds.");
+                }
+            }
+
+        } else if (!landedOn.isCanBePurchased() && landedOn.isOwned()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "This space is owned! \n You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                    "You must pay $%d to the player that owns this property.".formatted(landedOn.getRent()));
+            if (player1.getPlayerBudget() > landedOn.getRent()) {
+                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+            } else {
+                player1.setPlayerBudget(0);
+            }
+        } else if (!landedOn.isCanBePurchased() && !landedOn.isOwned()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                    "You must pay $%d.".formatted(landedOn.getRent()));
+            if (player1.getPlayerBudget() > landedOn.getRent()) {
+                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+            } else {
+                player1.setPlayerBudget(0);
+            }
+        } else if (landedOn.isDrawsCard()) {
+            app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+            //TODO: app.showcard()
+        }
+
+        else {
             app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
         }
 
@@ -316,11 +347,23 @@ public class GameBoardController {
         return new Space("AAAH", 0, 0, false, 0, 0);
     }
 
+    protected int getIndexOfSpace(Space spaceToNDX){
+        int loc = 0;
+        for(Space space : spaceArray) {
+            if(Objects.equals(space.getSpaceName(), spaceToNDX.getSpaceName())) {
+                return loc;
+            }
+            loc ++;
+        }
+        return -1;
+    }
     public void buyProperty(Space space) {
         if(player1.getPlayerBudget() < space.getPrice() && !space.isOwned()) {
+            space.setCanBePurchased(false);
             space.setOwned(true);
             space.setOwner(player1);
             player1.addProperty(space);
+            spaceArray[getIndexOfSpace(space)] = space;
         } else {
             app.showWarningDialog("Nope!", "You cannot buy this property!");
         }

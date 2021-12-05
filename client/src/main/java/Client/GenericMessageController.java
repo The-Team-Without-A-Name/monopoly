@@ -33,6 +33,7 @@ public class GenericMessageController {
 
     private String message;
 
+    private boolean result;
     @FXML
     private Label nameOfProperty;
 
@@ -66,20 +67,20 @@ public class GenericMessageController {
     }
 
     @FXML
-    public boolean handleBuyProperty(){
-        gameBoardController.buyProperty(gameBoardController.getSpace());
+    public void handleBuyProperty(){
         Stage stage = (Stage) dontBuy.getScene().getWindow();
         stage.close();
-        return true;
+        result = true;
     }
     @FXML
-    public boolean handleDontBuy() {
+    public void handleDontBuy() {
         //just close the window
         Stage stage = (Stage) dontBuy.getScene().getWindow();
         stage.close();
-        return false;
+        result = false;
     }
 
-
-
+    public boolean getResult() {
+        return result;
+    }
 }

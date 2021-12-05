@@ -3,6 +3,7 @@ package Server.handlers;
 import Server.GameContent;
 import com.google.gson.Gson;
 import io.javalin.http.Context;
+import library.Player;
 
 import java.util.Map;
 
@@ -14,9 +15,12 @@ public class newPlayerHandler extends BasicHandler {
 
     private String playerID;
 
+
+    Player player1 = new Player("player1");
+    Player player2 = new Player("player2");
     @Override
     public void processData(Map<String, String> data) {
-        playerID = content.newPlayer(data.get("playerName"));
+        playerID = GameContent.newPlayer(data.get("playerName"));
     }
 
     @Override

@@ -1,0 +1,23 @@
+language: java
+install: skip
+
+os: linux
+dist: focal
+
+services:
+  - docker
+
+script:
+  - jdk_switcher use openjdk10
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+  - chmod +x $TRAVIS_BUILD_DIR/install-jdk.sh
+  - export JAVA_HOME=$HOME/openjdk17
+  - $TRAVIS_BUILD_DIR/install-jdk.sh -F 16 --target $JAVA_HOME
+  - chmod +x gradlew
+  - ./gradlew assemble
+  - cd server
+  - sudo docker build -t
+
+deploy:
+  provider: script
+  script: bash docker_push

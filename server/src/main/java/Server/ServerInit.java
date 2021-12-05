@@ -2,9 +2,13 @@ package Server;
 
 import Server.handlers.*;
 import io.javalin.Javalin;
+import io.javalin.http.Handler;
 import library.Game;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import library.Player;
+
+import java.io.IOException;
 
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
@@ -16,6 +20,10 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 
 
 public class ServerInit {
+
+
+    Player player1 = new Player("p1");
+    Player player2 = new Player("p2");
 
     private Javalin app;
 
@@ -36,8 +44,18 @@ public class ServerInit {
             post("api/new-player", new newPlayerHandler(context));
             post("api/new-game", new newGameHandler(context));
             post("api/add-player", new addPlayerToGameHandler(context));
-            post("api/update-gamestate", new updateGameStateHandler(context));
-            get("api/get-gamestate", new getGameStateHandler(context));
+            try {
+                post("api/update-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                get("api/get-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            // get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {
                 ctx.result("OK");
             });

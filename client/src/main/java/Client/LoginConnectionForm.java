@@ -3,9 +3,11 @@ package Client;
 import Client.MonopolyClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.print.PageLayout;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import library.Player;
 
 import java.io.IOException;
 
@@ -41,6 +43,10 @@ public class LoginConnectionForm {
 
       Connection connection = Connection.instance();
       connection.initialize(uri.getText(), port.getValue().toString());
+      //TODO: get player from server
+
+
+
 
       if (connection.initialized && connection.test()) {
           try {
@@ -52,6 +58,8 @@ public class LoginConnectionForm {
       } else {
           app.showWarningDialog("Error Connecting", "Couldn't connect to the server. Make sure that port and address are correct and try again.");
       }
+
+
   }
 
 

@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * @author Rowan
  * This is a class for handling players in Monopoly game For now, this class contains only the
  * general methods and instances. create json for player location, money, propertiesowned, etc so
  * gamestate can be updated.
@@ -38,7 +39,7 @@ public class Player {
   private boolean getOutOfJailFree;
 
   @Getter @Setter
-  private String playerID;
+  private String  playerID;
   /** I decided to use this built-in java library, Point,  to store the position. It is pretty simple, and I will have to
    * reconfigure the GameBoardController, but I think it will be helpful
    * */
@@ -55,6 +56,7 @@ public class Player {
   // constructor
   public Player(String playerName) {
     this.playerName = playerName;
+    playerID = "0";
     playerBudget = 1500; //Starting dollar amount for standard Monopoly game
     position = new Point(10, 10);
     properties = new ArrayList<>();
@@ -64,6 +66,8 @@ public class Player {
 
 
   }
+
+
 
 
   //Method to call cardvalue and chancestring methods and return string and update player budget.

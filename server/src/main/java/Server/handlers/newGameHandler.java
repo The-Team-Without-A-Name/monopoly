@@ -16,7 +16,7 @@ public class newGameHandler extends BasicHandler{
     @Override
     public void processData(Map<String, String> data) {
         String playerID = data.get("playerID");
-        GameContent.newGame(playerID);
+        //GameContent.newGame(playerID);
     }
 
     @Override

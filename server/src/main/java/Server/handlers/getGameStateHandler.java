@@ -22,7 +22,7 @@ public class getGameStateHandler extends BasicHandler{
 
     @Override
     public Object getMessage() {
-        return GameContent.getGameState();
+        return 0;
     }
 
     @Override

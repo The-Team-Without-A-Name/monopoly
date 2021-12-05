@@ -40,20 +40,25 @@ public class ServerInit {
                         new Server(queuedThreadPool))).start(7000);
 
         app.get("/", ctx -> ctx.result("Server Launch Successful"));
+
         app.routes(() -> {
             post("api/new-player", new newPlayerHandler(context));
             post("api/new-game", new newGameHandler(context));
             post("api/add-player", new addPlayerToGameHandler(context));
-            try {
-                post("api/update-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                get("api/get-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
+            get("api/get-gamestate", GamestateController::getGamestate);
+
+           // try {
+            //    post("api/update-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
+           // } catch (IOException e) {
+              //  e.printStackTrace();
+            //}
+
+            // try {
+            //    get("api/get-gamestate", (Handler) updateGameStateHandler.updateGameStates(player1, player2));
+           // } catch (IOException e) {
+             //   e.printStackTrace();
+           // }
 
             // get("api/get-gamestate", new getGameStateHandler(context));
             get("/api/status", ctx -> {

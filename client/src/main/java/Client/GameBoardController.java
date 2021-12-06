@@ -170,6 +170,12 @@ public class GameBoardController {
     @FXML
     private Rectangle BoardWalk;
 
+    @FXML
+    private Label properties;
+
+    @FXML
+    private Label funding;
+
 
     private Player player1;
     private Player player2;
@@ -201,57 +207,66 @@ public class GameBoardController {
         spaceArray = loadSpaces();
         //TODO: make this come from the server if Rowan ever gets it done
         player1 = new Player("P1");
+        player1.setPlayerTurn(true);
         app.showWarningDialog("Welcome to the game.",  String.format("You are player %s", player1.getPlayerName()));
+        updateProperties();
     }
 
 
+    private void updateProperties() {
+        String values = "";
+        for (Space property : player1.getProperties()) {
+            values += property.getSpaceName() + "\n";
+        }
+        properties.setText(values);
+        funding.setText(String.valueOf(player1.getPlayerBudget()));
+    }
     //FXML button methods
     @FXML
     protected void onP1DiceButtonClick() throws InterruptedException, IOException {
 
+        if(player1.isPlayerTurn()) {
 
-        int diceVal = Dice.roll(player1);
-        p1DiceLabel.setText("Dice rolled: %d".formatted(diceVal));
-        Move(diceVal, p1Piece);
-        Space landedOn = getSpace();
-        if(landedOn.isCanBePurchased()) {
-            boolean choice = app.showMessage(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
-            if (choice) {
-                if (player1.getPlayerBudget() >= landedOn.getPrice() && landedOn.isCanBePurchased()) {
-                    buyProperty(landedOn);
+            int diceVal = Dice.roll(player1);
+            p1DiceLabel.setText("%d".formatted(diceVal));
+            Move(diceVal, p1Piece);
+            Space landedOn = getSpace();
+            if (landedOn.isCanBePurchased()) {
+                boolean choice = app.showMessage(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
+                if (choice) {
+                    if (player1.getPlayerBudget() >= landedOn.getPrice() && landedOn.isCanBePurchased()) {
+                        buyProperty(landedOn);
 
+                    } else if (player1.getPlayerBudget() < landedOn.getPrice()) {
+                        app.showWarningDialog("Not Allowed", "You cannot purchase this property because you do not have the proper funds.");
+                    }
                 }
-                else if (player1.getPlayerBudget() < landedOn.getPrice()) {
-                    app.showWarningDialog("Not Allowed", "You cannot purchase this property because you do not have the proper funds.");
+
+            } else if (!landedOn.isCanBePurchased() && landedOn.isOwned()) {
+                app.showWarningDialog(landedOn.getSpaceName(), "This space is owned! \n You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                        "You must pay $%d to the player that owns this property.".formatted(landedOn.getRent()));
+                if (player1.getPlayerBudget() > landedOn.getRent()) {
+                    player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+                } else {
+                    player1.setPlayerBudget(0);
                 }
-            }
-
-        } else if (!landedOn.isCanBePurchased() && landedOn.isOwned()) {
-            app.showWarningDialog(landedOn.getSpaceName(), "This space is owned! \n You landed on %s. ".formatted(landedOn.getSpaceName()) +
-                    "You must pay $%d to the player that owns this property.".formatted(landedOn.getRent()));
-            if (player1.getPlayerBudget() > landedOn.getRent()) {
-                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+            } else if (!landedOn.isCanBePurchased() && !landedOn.isOwned() && !landedOn.isDrawsCard()) {
+                app.showWarningDialog(landedOn.getSpaceName(), "You landed on %s. ".formatted(landedOn.getSpaceName()) +
+                        "You must pay $%d.".formatted(landedOn.getRent()));
+                if (player1.getPlayerBudget() > landedOn.getRent()) {
+                    player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
+                } else {
+                    player1.setPlayerBudget(0);
+                }
+            } else if (landedOn.isDrawsCard()) {
+                app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s, which will draw you a card.".formatted(landedOn.getSpaceName()));
+                //TODO: app.showcard()
             } else {
-                player1.setPlayerBudget(0);
+                app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
             }
-        } else if (!landedOn.isCanBePurchased() && !landedOn.isOwned()) {
-            app.showWarningDialog(landedOn.getSpaceName(), "You landed on %s. ".formatted(landedOn.getSpaceName()) +
-                    "You must pay $%d.".formatted(landedOn.getRent()));
-            if (player1.getPlayerBudget() > landedOn.getRent()) {
-                player1.setPlayerBudget(player1.getPlayerBudget() - landedOn.getRent());
-            } else {
-                player1.setPlayerBudget(0);
-            }
-        } else if (landedOn.isDrawsCard()) {
-            app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
-            //TODO: app.showcard()
+            updateProperties();
+            //TODO: update gamestate here
         }
-
-        else {
-            app.showWarningDialog(landedOn.getSpaceName(), "You have landed on: %s".formatted(landedOn.getSpaceName()));
-        }
-
-        //TODO: update gamestate here
 
     }
 
@@ -358,12 +373,13 @@ public class GameBoardController {
         return -1;
     }
     public void buyProperty(Space space) {
-        if(player1.getPlayerBudget() < space.getPrice() && !space.isOwned()) {
+        if(player1.getPlayerBudget() > space.getPrice() && !space.isOwned()) {
             space.setCanBePurchased(false);
             space.setOwned(true);
             space.setOwner(player1);
             player1.addProperty(space);
             spaceArray[getIndexOfSpace(space)] = space;
+            player1.setPlayerBudget(player1.getPlayerBudget() - space.getRent());
         } else {
             app.showWarningDialog("Nope!", "You cannot buy this property!");
         }
